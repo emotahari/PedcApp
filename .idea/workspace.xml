@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7eb7a38e-6e44-4482-8d20-5a73946febb7" name="Default Changelist" comment="3nd">
-      <change afterPath="$PROJECT_DIR$/budgeting/static/budgeting/css/bootstrap.rtl.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/budgeting/static/budgeting/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/budgeting/static/budgeting/js/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/budgeting/static/budgeting/js/popper.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/budgeting/templates/budgeting/incomecrud.html" afterDir="false" />
+    <list default="true" id="7eb7a38e-6e44-4482-8d20-5a73946febb7" name="Default Changelist" comment="4th">
+      <change afterPath="$PROJECT_DIR$/budgeting/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/budgeting/migrations/0002_auto_20210606_0312.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/budgeting/migrations/0003_auto_20210606_0318.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PedcApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/PedcApp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PedcApp/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/PedcApp/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/budgeting/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/budgeting/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/budgeting/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/budgeting/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/budgeting/templates/budgeting/incomecrud.html" beforeDir="false" afterPath="$PROJECT_DIR$/budgeting/templates/budgeting/incomecrud.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/budgeting/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/budgeting/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622899986635</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="4th">
+      <created>1622916595951</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1622916595951</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,6 +141,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first" />
     <MESSAGE value="3nd" />
-    <option name="LAST_COMMIT_MESSAGE" value="3nd" />
+    <MESSAGE value="4th" />
+    <option name="LAST_COMMIT_MESSAGE" value="4th" />
   </component>
 </project>

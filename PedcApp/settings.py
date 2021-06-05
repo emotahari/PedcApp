@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts.apps.AccountsConfig',
-    'budgeting.apps.BudjetingConfig',
+    'budgeting.apps.BudgetingConfig',
 ]
 
 MIDDLEWARE = [

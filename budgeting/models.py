@@ -25,6 +25,7 @@ class Income(models.Model):
     forcastIncomeQ3 = models.IntegerField("مقدار پیش بینی سه ماهه سوم"),
     forcastIncomeQ4 = models.IntegerField("مقدار پیش بینی سه ماهه چهارم"),
     yearOfForcast = models.IntegerField(),
+    isInGroupe = models.BooleanField('درآمد درون گروهی'),
 
 
     def __str__(self):

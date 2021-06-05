@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7eb7a38e-6e44-4482-8d20-5a73946febb7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/PedcApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PedcApp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/budgeting/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/budgeting/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +17,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1tWVg0GTIc4W3LJwTBE8PwZnOB2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -65,6 +69,7 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -88,36 +93,21 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first" />
     <option name="LAST_COMMIT_MESSAGE" value="first" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="585" y="88" key="CommitChangelistDialog2" timestamp="1622889578326">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="585" y="88" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1622889578326" />
-    <state x="838" y="418" key="Github.ShareDialog" timestamp="1622887188895">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="838" y="418" key="Github.ShareDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1622887188895" />
-    <state x="803" y="224" key="Github.UntrackedFilesDialog" timestamp="1622887202247">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="803" y="224" key="Github.UntrackedFilesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1622887202247" />
-    <state x="0" y="168" key="SettingsEditor" timestamp="1622888119279">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="0" y="168" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1622888119279" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1622889593036">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1622889593036" />
-    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1622888259977">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1622888259977" />
   </component>
 </project>

@@ -27,7 +27,7 @@ class Migration(migrations.Migration):
             name='Income',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('currency', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='budjeting.currency')),
+                ('currency', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='budgeting.currency')),
             ],
             options={
                 'verbose_name': 'درآمد',

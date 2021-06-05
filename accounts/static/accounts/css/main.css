@@ -1,0 +1,24 @@
+@font-face {
+    font-family: Yekan;
+    src: url("../fonts/Yekan.ttf");
+}
+
+body {
+    direction: rtl;
+    text-align: right;
+    font-family: Yekan;
+    font-size: 14px !important;
+    margin: 0;
+    background-color: #e6e6e6;
+}
+#container{
+    max-width: 720px;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+
+#header{
+    background-color: #860002;
+    color: #ffffff;
+    height: 100px;
+}

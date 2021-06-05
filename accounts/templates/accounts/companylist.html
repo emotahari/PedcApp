@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>لیست شرکت ها</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/accounts/css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/accounts/css/bootstrap-rtl.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/accounts/css/bootstrap-rtl-grid.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/accounts/css/bootstrap-rtl-reboot.min.css' %}">
+
+</head>
+<body dir="rtl">
+    <h1>
+        سامانه بودجه ریزی
+    </h1>
+    <h3>
+        لیست شرکت ها
+    </h3>
+    <a href="{% url "accounts:companyList" %}">  خانه </a>
+    <div class="row">
+        <div class="col py-3">
+            {% if company_list %}
+                <div class="row px-2" >
+                    {% for c in company_list %}
+                        <div class="col-3 px-2 py-2">
+                           <a href="##" class="btn btn-outline-dark" style="width: 18rem;height: 100%">
+                                    <span><img src="{% static '/accounts/img/logos/'%}{{c.logoAddress}}" class="card-img-top" alt="..."></span>
+                                    <div class="card-body">
+                                     <span><h5 class="card-title " >{{ c.name }}</h5></span>
+{#                                     <br>#}
+{#                                     <span><a href="#" class="btn btn-warning">انتخاب</a></span>#}
+                                    </div>
+                           </a>
+                        </div>
+
+                    {% endfor %}
+                </div>
+    {% else %}
+        <p style="color: darkred">
+        هیچ شرکتی وجود ندارد
+        </p>
+    {% endif %}
+        </div>
+    </div>
+    <script src="{% static '/js/main.js' %}"></script>
+</body>
+</html>

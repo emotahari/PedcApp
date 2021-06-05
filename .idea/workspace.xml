@@ -1,15 +1,161 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+  <component name="ChangeListManager">
+    <list default="true" id="7eb7a38e-6e44-4482-8d20-5a73946febb7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/accounts/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/css/bootstrap-rtl-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/css/bootstrap-rtl-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/css/bootstrap-rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/css/custom-rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/fonts/Yekan.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/fonts/Yekan.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/fonts/Yekan.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/img/img-34.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/img/logos/Alborz.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/img/logos/Behin-Energy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/img/logos/Danial.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/img/logos/E&amp;P en 2 logo icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/img/logos/ESTD.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/img/logos/Fajr kerman 002 logo icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/img/logos/Hengam 002 logo icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/img/logos/JAVID.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/img/logos/Naftanir 002 logo icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/img/logos/Nirugostar 002 logo icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/img/logos/Omid-Kish.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/img/logos/Ostovan-Kish.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/img/logos/PARDIS.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/img/logos/Pars Behin 002 logo icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/img/logos/Pezhvak.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/img/logos/QESHM-MOVALLED.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/img/logos/ROMAK.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/img/logos/SINA.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/img/logos/SOROUSH-ENERGY.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/img/logos/Seavan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/img/logos/Taban enerrgy 002 logo icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/img/logos/Tabesh 002 logo icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/img/logos/Tadbir sazan 002 logo icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/img/logos/Tejarat Pasargad 002 logo icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/img/logos/WEST-AZARBAYEJAN.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/img/logos/hara.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/accounts/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/templates/accounts/companylist.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/templates/accounts/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/budjeting/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/budjeting/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/budjeting/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PedcApp/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/PedcApp/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PedcApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/PedcApp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1tWVg0GTIc4W3LJwTBE8PwZnOB2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/budjeting" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Programing Project\PedcApp\budjeting" />
+      <recent name="F:\Programing Project\PedcApp\accounts" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="PedcApp" type="Python.DjangoServer" factoryName="Django server">
+      <module name="PedcApp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7eb7a38e-6e44-4482-8d20-5a73946febb7" name="Default Changelist" comment="" />
+      <created>1622884939561</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1622884939561</updated>
+      <workItem from="1622884947825" duration="3414000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="838" y="418" key="Github.ShareDialog" timestamp="1622887188895">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="838" y="418" key="Github.ShareDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1622887188895" />
+    <state x="803" y="224" key="Github.UntrackedFilesDialog" timestamp="1622887202247">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="803" y="224" key="Github.UntrackedFilesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1622887202247" />
+    <state x="0" y="168" key="SettingsEditor" timestamp="1622888119279">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="0" y="168" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1622888119279" />
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1622888259977">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1622888259977" />
   </component>
 </project>

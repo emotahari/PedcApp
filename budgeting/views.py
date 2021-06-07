@@ -16,5 +16,5 @@ def income_view(request):
             fm = IncomeAdd()
     else:
         fm = IncomeAdd()
-        incomeList = Income.objects.all()
-    return render(request, 'budgeting/incomecrud.html', {'form': fm, 'incomeList': incomeList})
+        incomelist = Income.objects.all()
+    return render(request, 'budgeting/incomecrud.html', {'form': fm, 'icList': incomelist})

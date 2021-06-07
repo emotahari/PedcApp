@@ -24,7 +24,7 @@
                 <div class="row px-2" >
                     {% for c in company_list %}
                         <div class="col-3 px-2 py-2">
-                           <a href="##" class="btn btn-outline-dark" style="width: 18rem;height: 100%">
+                           <a href="{% url 'budgeting:income'%}" class="btn btn-outline-dark" style="width: 18rem;height: 100%">
                                     <span><img src="{% static '/accounts/img/logos/'%}{{c.logoAddress}}" class="card-img-top" alt="..."></span>
                                     <div class="card-body">
                                      <span><h5 class="card-title " >{{ c.name }}</h5></span>

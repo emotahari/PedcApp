@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7eb7a38e-6e44-4482-8d20-5a73946febb7" name="Default Changelist" comment="5th">
+    <list default="true" id="7eb7a38e-6e44-4482-8d20-5a73946febb7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/PedcApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PedcApp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/apps.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/companylist.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/companylist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/budgeting/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/budgeting/apps.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/budgeting/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/budgeting/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/budgeting/templates/budgeting/incomecrud.html" beforeDir="false" afterPath="$PROJECT_DIR$/budgeting/templates/budgeting/incomecrud.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/budgeting/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/budgeting/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/budgeting/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/budgeting/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,14 +50,14 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Ehsan\Documents\GitHub\PedcApp\budgeting\templates\budgeting" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Ehsan\Documents\GitHub\PedcApp\budgeting\static\budgeting\js" />
       <recent name="C:\Users\Ehsan\Documents\GitHub\PedcApp\budgeting\static\budgeting\css" />
       <recent name="F:\Programing Project\PedcApp\budjeting" />
       <recent name="F:\Programing Project\PedcApp\accounts" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Ehsan\Documents\GitHub\PedcApp\budgeting\templates\budgeting" />
     </key>
   </component>
   <component name="RunManager">
@@ -84,7 +85,7 @@
       <method v="2" />
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -150,5 +151,15 @@
     <MESSAGE value="4th" />
     <MESSAGE value="5th" />
     <option name="LAST_COMMIT_MESSAGE" value="5th" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="461" y="165" key="SettingsEditor" timestamp="1623310707112">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1623310707112" />
+    <state x="683" y="308" key="git4idea.merge.GitPullDialog" timestamp="1623310438686">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="683" y="308" key="git4idea.merge.GitPullDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1623310438686" />
   </component>
 </project>

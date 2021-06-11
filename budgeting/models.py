@@ -36,4 +36,4 @@ class Income(models.Model):
     # currency = models.ForeignKey('Currency', on_delete=models.PROTECT)
 
     def __str__(self):
-        self.projectName
+        return self.projectName

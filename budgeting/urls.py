@@ -3,7 +3,7 @@ from django.urls import path
 
 app_name = 'budgeting'
 urlpatterns = [
-    path('income/', views.income_view, name='income'),
+    path('income/<int:company_id>', views.income_view, name='income'),
 
 
 ]

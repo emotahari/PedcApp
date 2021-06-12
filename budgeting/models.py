@@ -33,7 +33,8 @@ class Income(models.Model):
     forcastIncomeQ4 = models.IntegerField("مقدار پیش بینی سه ماهه چهارم", default=0)
     yearOfForcast = models.IntegerField(default=1400)
     isInGroupe = models.BooleanField('درآمد درون گروهی', default=0)
-    # currency = models.ForeignKey('Currency', on_delete=models.PROTECT)
+    currency = models.ForeignKey('Currency', on_delete=models.PROTECT)
+    company = models.ForeignKey('accounts.Company', on_delete=models.PROTECT)
 
     def __str__(self):
         return self.projectName

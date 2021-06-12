@@ -9,7 +9,7 @@ class IncomeAdd(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'projectName': forms.TextInput(attrs={'class': 'form-control'}),
-            'realIncomeQ1': forms.TextInput(attrs={'class': 'form-control',}),
+            'realIncomeQ1': forms.TextInput(attrs={'class': 'form-control'}),
             'realIncomeQ2': forms.TextInput(attrs={'class': 'form-control'}),
             'realIncomeQ3': forms.TextInput(attrs={'class': 'form-control'}),
             'realIncomeQ4': forms.TextInput(attrs={'class': 'form-control'}),
@@ -19,4 +19,5 @@ class IncomeAdd(forms.ModelForm):
             'forcastIncomeQ4': forms.TextInput(attrs={'class': 'form-control'}),
             'yearOfForcast': forms.TextInput(attrs={'class': 'form-control'}),
             'isInGroupe': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+            'company': forms.Select(attrs={'value': '3'}),
         }

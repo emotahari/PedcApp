@@ -4,6 +4,7 @@
     <list default="true" id="7eb7a38e-6e44-4482-8d20-5a73946febb7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/PedcApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PedcApp.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="7eb7a38e-6e44-4482-8d20-5a73946febb7" name="Default Changelist" comment="6th">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/companylist.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/companylist.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/budgeting/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/budgeting/models.py" afterDir="false" />
@@ -29,6 +30,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="cc950279-cf30-44b0-aa4f-e5515c9c8141" />
+  </component>
   <component name="ProjectId" id="1tWVg0GTIc4W3LJwTBE8PwZnOB2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -47,7 +51,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -58,6 +62,9 @@
       <recent name="C:\Users\Ehsan\Documents\GitHub\PedcApp\budgeting\static\budgeting\css" />
       <recent name="F:\Programing Project\PedcApp\budjeting" />
       <recent name="F:\Programing Project\PedcApp\accounts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Ehsan\Documents\GitHub\PedcApp\budgeting\templates\budgeting" />
     </key>
   </component>
   <component name="RunManager">
@@ -97,7 +104,7 @@
       <option name="presentableId" value="Default" />
       <updated>1622884939561</updated>
       <workItem from="1622884947825" duration="4265000" />
-      <workItem from="1622987580913" duration="8185000" />
+      <workItem from="1622987580913" duration="8788000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1622889581038</created>
@@ -127,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622934991741</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="6th">
+      <created>1623091189958</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1623091189958</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,6 +164,8 @@
     <MESSAGE value="3nd" />
     <MESSAGE value="4th" />
     <MESSAGE value="5th" />
+    <MESSAGE value="6th" />
+    <option name="LAST_COMMIT_MESSAGE" value="6th" />
     <option name="LAST_COMMIT_MESSAGE" value="5th" />
   </component>
   <component name="WindowStateProjectService">

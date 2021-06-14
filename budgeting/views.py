@@ -6,18 +6,67 @@ from django.urls import reverse
 
 from accounts.models import Company
 from budgeting.forms import IncomeAdd
-from budgeting.models import Income
+from budgeting.models import Income, Currency
 
 
 def income_view(request, company_id):
     company = get_object_or_404(Company, pk=company_id)
-    # company = Company.objects.get(pk=company_id)
+    currency = Currency.objects.all()
+    context = {
+        'companys': company
+
+    }
+    newIncome = Income()
+    newCurrency = Currency()
+    newCompany = Company()
+    newCurrency.id = request.POST.get('currency',1)
+    newCompany.id = request.POST.get('currency',1)
+    newIncome.forcastIncomeQ1 = request.POST.get('forcastIncomeQ1',0)
+    newIncome.forcastIncomeQ2 = request.POST.get('forcastIncomeQ2',0)
+    newIncome.forcastIncomeQ3 = request.POST.get('forcastIncomeQ3',0)
+    newIncome.forcastIncomeQ4 = request.POST.get('forcastIncomeQ4',0)
+    newIncome.realIncomeQ1 = request.POST.get('realIncomeQ1',0)
+    newIncome.realIncomeQ2 = request.POST.get('realIncomeQ2',0)
+    newIncome.realIncomeQ3 = request.POST.get('realIncomeQ3',0)
+    newIncome.realIncomeQ4 = request.POST.get('realIncomeQ4',0)
+    newIncome.projectName = request.POST.get('projectName',0)
+    newIncome.yearOfForcast = request.POST.get('yearOfForcast',1400)
+    newIncome.isInGroupe = request.POST.get('isInGroupe',0)
+    # newIncome.currency = newCurrency.id
+    # newIncome.company = newCompany.id
     if request.method == 'POST':
-        fm = IncomeAdd(request.POST)
-        if fm.is_valid():
-            fm.save()
-            fm = IncomeAdd()
+        Income.objects.create(
+            projectName = newIncome.projectName,
+            realIncomeQ1 = newIncome.realIncomeQ1,
+            realIncomeQ2 = newIncome.realIncomeQ2,
+            realIncomeQ3 = newIncome.realIncomeQ3,
+            realIncomeQ4 = newIncome.realIncomeQ4,
+            forcastIncomeQ1 = newIncome.forcastIncomeQ1,
+            forcastIncomeQ2 = newIncome.forcastIncomeQ2,
+            forcastIncomeQ3 = newIncome.forcastIncomeQ3,
+            forcastIncomeQ4 = newIncome.forcastIncomeQ4,
+            yearOfForcast = newIncome.yearOfForcast ,
+            isInGroupe = newIncome.isInGroupe,
+            currency = newCurrency,
+            company = newCompany,
+        )
+        incomelist = Income.objects.filter(company=company_id)
     else:
-        fm = IncomeAdd()
-        incomelist = Income.objects.all()
-    return render(request, 'budgeting/incomecrud.html', {'form': fm, 'icList': incomelist, 'company': company})
+        incomelist = Income.objects.filter(company=company_id)
+
+    # newIncome.save()
+
+
+
+    # ######### old  ###################################
+    # company = Company.objects.get(pk=company_id)
+    # if request.method == 'POST':
+    #     fm = IncomeAdd(request.POST)
+    #     if fm.is_valid():
+    #         fm.save()
+    #         fm = IncomeAdd()
+    #     else:
+    #     fm = IncomeAdd()
+    #     incomelist = Income.objects.all()
+    # ###################################################
+    return render(request, 'budgeting/incomecrud00.html', {'companies': company, 'currencies': currency,'incomeList': incomelist})

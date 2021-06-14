@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ثبت درآمدها</title>
+    <link rel="stylesheet" href="{% static '/budgeting/css/bootstrap.rtl.min.css' %}">
+    <style type="text/css">body{direction:rtl;}</style>
+</head>
+<body>
+
+<div class="container mt-5, p-3 mb-2 bg-light text-dark">
+    <h2 class="text-center alert alert-warning">مدیریت درآمدهای شرکت {{ companies.name }} </h2>
+    <h5 class="text-center alert alert-info">ثبت درآمد</h5>
+
+    <form class="form-inline" action="" method="POST" >
+        <div class="row">
+            {% csrf_token %}
+            <div class="col-4">
+                <p><label for="id_projectName">نام محصول/خدمت درامدی:</label> <input type="text" name="projectName" class="form-control" maxlength="100" required id="id_projectName"></p>
+                <p><label for="id_realIncomeQ1">مقدار واقعی سه ماهه اول:</label> <input type="text" name="realIncomeQ1" value="0" class="form-control" required id="id_realIncomeQ1"></p>
+                <p><label for="id_realIncomeQ2">مقدار واقعی سه ماهه دوم:</label> <input type="text" name="realIncomeQ2" value="0" class="form-control" required id="id_realIncomeQ2"></p>
+                <p><label for="id_realIncomeQ3">مقدار واقعی سه ماهه سوم:</label> <input type="text" name="realIncomeQ3" value="0" class="form-control" required id="id_realIncomeQ3"></p>
+                <p><label for="id_realIncomeQ4">مقدار واقعی سه ماهه چهارم:</label> <input type="text" name="realIncomeQ4" value="0" class="form-control" required id="id_realIncomeQ4"></p>
+            </div>
+            <div class="col-4">
+                <p><label for="id_company">شرکت:</label> <select class="form-control" id="company" name="company" disabled> <option value="{{ companies.id }}">{{ companies.name }}</option></select></p>
+                <p><label for="id_forcastIncomeQ1">مقدار پیش بینی سه ماهه اول:</label> <input type="text" name="forcastIncomeQ1" value="0" class="form-control" required id="id_forcastIncomeQ1"></p>
+                <p><label for="id_forcastIncomeQ2">مقدار پیش بینی سه ماهه دوم:</label> <input type="text" name="forcastIncomeQ2" value="0" class="form-control" required id="id_forcastIncomeQ2"></p>
+                <p><label for="id_forcastIncomeQ3">مقدار پیش بینی سه ماهه سوم:</label> <input type="text" name="forcastIncomeQ3" value="0" class="form-control" required id="id_forcastIncomeQ3"></p>
+                <p><label for="id_forcastIncomeQ4">مقدار پیش بینی سه ماهه چهارم:</label> <input type="text" name="forcastIncomeQ4" value="0" class="form-control" required id="id_forcastIncomeQ4"></p>
+            </div>
+            <div class="col-4">
+                <p><label for="id_yearOfForcast">سال بودجه ای:</label> <input type="text" name="yearOfForcast" value="1400" class="form-control" required id="id_yearOfForcast">
+                <p><label for="id_currency">نوع ارز:</label> <select name="currency" id="id_currency" class="form-control" >
+                                                                        {% for c in currencies %}
+                                                                        <option value="{{ c.id }}">{{ c.currencyName }}</option>
+                                                                        {% endfor %} </select>
+                <br>
+                <p><label for="id_isInGroupe">درآمد درون گروهی:</label> <input type="checkbox" name="isInGroupe" value="0" class="form-check-input" id="id_isInGroupe" >
+                <br><br><br><p><input type="submit" class="btn btn-warning text-center" value="ثبت">
+
+
+            </div>
+        </div>
+    </form>
+    <div class="container mt-5, p-3 mb-2 bg-light text-dark" >
+            <h5 class="text-center alert alert-info">اطلاعات درآمدهای ثبت شده</h5>
+            {% if incomeList %}
+                <table class="table table-striped">
+                <thead>
+                    <tr class="table-active">
+                        <th scope="col">ردیف</th>
+                        <th scope="col">درآمد</th>
+                        <th scope="col">سه ماهه اول سال جاری</th>
+                        <th scope="col">سه ماهه دوم سال جاری</th>
+                        <th scope="col">سه ماهه سوم سال جاری</th>
+                        <th scope="col">سه ماهه چهارم سال جاری</th>
+                        <th scope="col">سه ماهه اول سال آتی</th>
+                        <th scope="col">سه ماهه دوم سال آتی</th>
+                        <th scope="col">سه ماهه سوم سال آتی</th>
+                        <th scope="col">سه ماهه چهارم سال آتی</th>
+                        <th scope="col">نوع ارز</th>
+                        <th scope="col">درون گروهی</th>
+                        <th scope="col">ویرایش</th>
+                        <th scope="col">حذف</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                        {% for d in  incomeList  %}
+                            <tr >
+                            <th scope="row">{{ d.id }}</th>
+                            <td>{{ d.projectName }}</td>
+                            <td>{{ d.realIncomeQ1 }}</td>
+                            <td>{{ d.realIncomeQ2 }}</td>
+                            <td>{{ d.realIncomeQ3 }}</td>
+                            <td>{{ d.realIncomeQ4 }}</td>
+                            <td>{{ d.forcastIncomeQ1 }}</td>
+                            <td>{{ d.forcastIncomeQ2 }}</td>
+                            <td>{{ d.forcastIncomeQ3 }}</td>
+                            <td>{{ d.forcastIncomeQ4 }}</td>
+                            <td>{{ d.currency.currencyName }}</td>
+                            <td>{{ d.isInGroupe }}</td>
+                            <td><input type="submit" class="btn btn-warning text-center" value="ویرایش"></td>
+                            <td><input type="submit" class="btn btn-danger text-center" value="حذف"></td>
+                            </tr>
+                        {% endfor %}
+
+                </tbody>
+            </table>
+
+            {% else %}
+            <h5 class="text-center alert alert-danger">داده ای برای نمایش وجود ندارد</h5>
+            {% endif %}
+        </div>
+</div>
+
+
+
+<script src="{% static '/budgeting/js/bootstrap.js' %}"></script>
+<script src="{% static '/budgeting/js/popper.min.js' %}"></script>
+<script src="{% static '/budgeting/js/jquery.js' %}"></script>
+</body>
+</html>

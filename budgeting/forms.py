@@ -1,3 +1,4 @@
+
 from django import forms
 
 from budgeting.models import Income
@@ -6,7 +7,9 @@ from budgeting.models import Income
 class IncomeAdd(forms.ModelForm):
     class Meta:
         model = Income
-        fields = '__all__'
+        fields = ['projectName', 'realIncomeQ1', 'realIncomeQ2', 'realIncomeQ3','realIncomeQ4',
+                  'forcastIncomeQ1','forcastIncomeQ2','forcastIncomeQ3','forcastIncomeQ4',
+                  'yearOfForcast', 'isInGroupe', 'currency']
         widgets = {
             'projectName': forms.TextInput(attrs={'class': 'form-control'}),
             'realIncomeQ1': forms.TextInput(attrs={'class': 'form-control'}),
@@ -19,5 +22,6 @@ class IncomeAdd(forms.ModelForm):
             'forcastIncomeQ4': forms.TextInput(attrs={'class': 'form-control'}),
             'yearOfForcast': forms.TextInput(attrs={'class': 'form-control'}),
             'isInGroupe': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
-            'company': forms.Select(attrs={'value': '3'}),
+            'company': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+
         }

@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <title>ثبت درآمدها</title>
     <link rel="stylesheet" href="{% static '/budgeting/css/bootstrap.rtl.min.css' %}">
+    <link rel="stylesheet" href="{% static '/budgeting/css/all.css' %}">
     <style type="text/css">body{direction:rtl;}</style>
 </head>
 <body>
@@ -83,8 +84,10 @@
                             <td>{{ d.forcastIncomeQ4 }}</td>
                             <td>{{ d.currency.currencyName }}</td>
                             <td>{{ d.isInGroupe }}</td>
-                            <td><input type="submit" class="btn btn-warning text-center" value="ویرایش"></td>
-                            <td><input type="submit" class="btn btn-danger text-center" value="حذف"></td>
+                                <td><a href="{% url 'budgeting:updateincome' d.id  %}" class="btn btn-warning">ویرایش</a></td>
+                            <td><form   action="{% url 'budgeting:deleteincome' d.id%}" method="post" class="d-inline"> {% csrf_token %}
+                                <input type="submit" class="btn btn-danger" value="حذف">
+                            </form></td>
                             </tr>
                         {% endfor %}
 
@@ -95,6 +98,9 @@
             <h5 class="text-center alert alert-danger">داده ای برای نمایش وجود ندارد</h5>
             {% endif %}
         </div>
+</div>
+<div>
+    <a href="{% url 'budgeting:costofsale' companies.id  %}" class="btn btn-info">مرحله بعد</a>
 </div>
 
 

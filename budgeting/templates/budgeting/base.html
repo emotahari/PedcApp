@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<%{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title0 %}{% endblock title0 %}</title>
+    <link rel="stylesheet" href="{% static '/budgeting/css/bootstrap.rtl.min.css' %}">
+    <link rel="stylesheet" href="{% static '/budgeting/css/all.css' %}">
+    <style type="text/css">body{direction:rtl;}</style>
+
+
+</head>
+<body>
+    <div class="container mt-5, p-3 mb-2 bg-light text-dark">
+    <h2 class="text-center alert alert-warning">{% block title1 %}{% endblock title1 %} </h2>
+    <h5 class="text-center alert alert-info">{% block title2 %}{% endblock title2 %}</h5>
+
+    <div>
+        {% block content %}
+        {% endblock content %}
+    </div>
+    <script src="{% static '/budgeting/js/bootstrap.js' %}"></script>
+    <script src="{% static '/budgeting/js/popper.min.js' %}"></script>
+    <script src="{% static '/budgeting/js/jquery.js' %}"></script>
+
+</body>
+</html>

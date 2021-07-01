@@ -1,28 +1,88 @@
 
 <!DOCTYPE html>
-<%{% load static %}
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{% block title0 %}{% endblock title0 %}</title>
     <link rel="stylesheet" href="{% static '/budgeting/css/bootstrap.rtl.min.css' %}">
     <link rel="stylesheet" href="{% static '/budgeting/css/all.css' %}">
+    <link rel="stylesheet" href="{% static '/budgeting/css/main.css' %}">
     <style type="text/css">body{direction:rtl;}</style>
 
 
 </head>
 <body>
-    <div class="container mt-5, p-3 mb-2 bg-light text-dark">
+
+    <div class="container mt-5, p-3 mb-2  bg-light text-dark">
+    <div  class=" ">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <a class="navbar-brand" href="#">
+                <img src="{% static '/budgeting/logo/PEDC_Logo.png' %}" width="50" height="50" alt="">
+              </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">خانه <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">لیست شرکت ها</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        سود و زیان
+                        </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">درآمدها</a>
+                                <a class="dropdown-item" href="#">هزینه ها</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                    </li>
+                </ul>
+                <div class="d-flex flex-row justify-content-start">
+                    <a  href="{% url 'accounts:logout' %}" class="btn btn-danger m-2 ">خروج</a>
+                </div>
+            </div>
+        </nav>
+                <br>
+
+    </div>
     <h2 class="text-center alert alert-warning">{% block title1 %}{% endblock title1 %} </h2>
+    <div class="container mt-5,  mb-2">
+    <div class="row alert alert-info text-center " >
+        <a class="col btn btn-secondary text-center" href="{% url 'budgeting:income' 1 %}"> درآمدهای عملیاتی</a>
+        <a class="col btn btn-secondary text-center" href="{% url 'budgeting:income' 1 %}"> هزینه های عملیاتی</a>
+        <a class="col btn btn-secondary text-center" href="{% url 'budgeting:income' 1 %}">  هزینه های عمومی، اداری</a>
+        <a class="col btn btn-secondary text-center" href="{% url 'budgeting:income' 1 %}"> سایر درآمدهای عملیاتی</a>
+        <a class="col btn btn-secondary text-center" href="{% url 'budgeting:income' 1 %}"> سایر هزینه های عملیاتی</a>
+        <a class="col btn btn-secondary text-center" href="{% url 'budgeting:income' 1 %}"> هزینه های مالی</a>
+        <a class="col btn btn-secondary text-center" href="{% url 'budgeting:income' 1 %}">سایر درآمدهای غیر عملیاتی</a>
+        <a class="col btn btn-secondary text-center" href="{% url 'budgeting:income' 1 %}">سایر هزینه های غیر عملیاتی</a>
+        <a class="col btn btn-secondary text-center" href="{% url 'budgeting:income' 1 %}"> هزینه مالیات بر درآمد</a>
+    </div>
+    </div>
     <h5 class="text-center alert alert-info">{% block title2 %}{% endblock title2 %}</h5>
 
     <div>
         {% block content %}
         {% endblock content %}
     </div>
-    <script src="{% static '/budgeting/js/bootstrap.js' %}"></script>
-    <script src="{% static '/budgeting/js/popper.min.js' %}"></script>
-    <script src="{% static '/budgeting/js/jquery.js' %}"></script>
+    <footer class="bg-light text-center text-lg-start">
 
+            <div class="text-center p-3 bg-dark text-secondary" >
+
+                <a class="text-secondary" href="https://www.pedc.ir/">گسترش انرژی پاسارگاد</a>
+                © 2021 Copyright:
+            </div>
+
+    </footer>
+<script src="{% static '/budgeting/js/bootstrap.js' %}"></script>
+<script src="{% static '/budgeting/js/popper.min.js' %}"></script>
+<script src="{% static '/budgeting/js/jquery.js' %}"></script>
 </body>
 </html>

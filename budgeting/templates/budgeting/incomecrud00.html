@@ -40,7 +40,7 @@
                                                                         {% endfor %} </select>
                 <br>
                 <p><label for="id_isInGroupe">درآمد درون گروهی:</label> <input type="checkbox" name="isInGroupe" value="0" class="form-check-input" id="id_isInGroupe" >
-                <br><br><br><p><input type="submit" class="btn btn-warning text-center" value="ثبت">
+                <br><br><br><p><div class="row"> <input type="submit" class="btn btn-warning text-center m-2  col-4" value="ثبت"></div>
 
 
             </div>
@@ -98,11 +98,15 @@
             <h5 class="text-center alert alert-danger">داده ای برای نمایش وجود ندارد</h5>
             {% endif %}
         </div>
-</div>
-<div>
-    <a href="{% url 'budgeting:costofsale' companies.id  %}" class="btn btn-info">مرحله بعد</a>
-</div>
 
+<div class="row">
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+    <a href="{% url 'budgeting:costofsale' companies.id  %}" class="btn btn-info col p-2 m-2">مرحله بعد</a>
+</div>
+</div>
 
 
 <script src="{% static '/budgeting/js/bootstrap.js' %}"></script>

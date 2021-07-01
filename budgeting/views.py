@@ -4,9 +4,9 @@ from django.shortcuts import render, get_object_or_404, redirect
 # Create your views here.
 from django.urls import reverse
 
-from accounts.models import Company
+from accounts.models import Company, ProfileAuth
 from budgeting.forms import IncomeAdd, CostAddShow
-from budgeting.models import Income, Currency, CostType
+from budgeting.models import Income, Currency, CostType, CostOfSales
 
 
 #  incomAdd
@@ -96,6 +96,19 @@ def addCostOfSales(request, id):
     company = get_object_or_404(Company, pk=id)
     currency = Currency.objects.all()
     costType = CostType.objects.all()
-    fg = CostAddShow()
-    return render(request, 'budgeting/costofsales.html', {'form': fg, 'companies': company, 'currency': currency
-                                                          ,'costType': costType})
+    costOfSales = CostOfSales.objects.all()
+    userAuth = request.user
+    userAuthList = ProfileAuth.objects.filter(userAuth = userAuth)
+    b = []
+    for a in userAuthList:
+        b.append(a.companyAuth.id)
+    if request.method == "GET":
+        form = CostAddShow()
+        return render(request, 'budgeting/costofsales.html', {'form': form, 'companies': company, 'currency': currency
+                                                          ,'costType': costType, 'costOfSales': costOfSales, 'userAuth':b})
+    else:
+        form = CostAddShow(request.POST)
+        if form.is_valid():
+            form.save()
+        return render(request, 'budgeting/costofsales.html', {'form': form, 'companies': company, 'currency': currency
+                                                          ,'costType': costType, 'costOfSales': costOfSales, 'userAuth':b})

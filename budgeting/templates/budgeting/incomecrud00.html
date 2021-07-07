@@ -1,19 +1,21 @@
-{% load static %}
-<!DOCTYPE html>
+{% extends 'budgeting/base.html' %}
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>ثبت درآمدها</title>
-    <link rel="stylesheet" href="{% static '/budgeting/css/bootstrap.rtl.min.css' %}">
-    <link rel="stylesheet" href="{% static '/budgeting/css/all.css' %}">
-    <style type="text/css">body{direction:rtl;}</style>
-</head>
-<body>
+{% block title0 %}
+مدیریت درآمدهای عملیاتی
+{% endblock title0 %}
+{% block title1 %}
+    شرکت
+    {{ companies.name }}
+{% endblock title1 %}
 
-<div class="container mt-5, p-3 mb-2 bg-light text-dark">
-    <h2 class="text-center alert alert-warning">مدیریت درآمدهای شرکت {{ companies.name }} </h2>
-    <h5 class="text-center alert alert-info">ثبت درآمد</h5>
+
+{% block title2 %}
+    ثبت درآمدهای عملیاتی
+{% endblock title2 %}
+
+{% block content %}
+
+
 
     <form class="form-inline" action="" method="POST" >
         <div class="row">
@@ -108,9 +110,4 @@
 </div>
 </div>
 
-
-<script src="{% static '/budgeting/js/bootstrap.js' %}"></script>
-<script src="{% static '/budgeting/js/popper.min.js' %}"></script>
-<script src="{% static '/budgeting/js/jquery.js' %}"></script>
-</body>
-</html>
+{% endblock content %}

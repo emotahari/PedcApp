@@ -27,7 +27,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">خانه <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{% url 'accounts:companyList' %} ">خانه <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">لیست شرکت ها</a>
@@ -55,7 +55,7 @@
     <h2 class="text-center alert alert-warning">{% block title1 %}{% endblock title1 %} </h2>
     <div class="container mt-5,  mb-2">
     <div class="row alert alert-info text-center " >
-        <a class="col btn btn-secondary text-center" href="{% url 'budgeting:income' 1 %}"> درآمدهای عملیاتی</a>
+        <a class="col btn btn-secondary text-center bg-image" href="{% url 'budgeting:income' 1 %}"> درآمدهای عملیاتی</a>
         <a class="col btn btn-secondary text-center" href="{% url 'budgeting:income' 1 %}"> هزینه های عملیاتی</a>
         <a class="col btn btn-secondary text-center" href="{% url 'budgeting:income' 1 %}">  هزینه های عمومی، اداری</a>
         <a class="col btn btn-secondary text-center" href="{% url 'budgeting:income' 1 %}"> سایر درآمدهای عملیاتی</a>
@@ -76,8 +76,8 @@
 
             <div class="text-center p-3 bg-dark text-secondary" >
 
-                <a class="text-secondary" href="https://www.pedc.ir/">گسترش انرژی پاسارگاد</a>
-                © 2021 Copyright:
+                <a class="text-secondary" href="https://www.pedc.ir/">معاونت استراتژی و مدیریت پرتفولیو - گسترش انرژی پاسارگاد</a>
+                - © 2021 Copyright
             </div>
 
     </footer>

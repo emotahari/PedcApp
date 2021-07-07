@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 
 
@@ -6,7 +7,9 @@ from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 import accounts
-from accounts.models import Company
+from accounts.models import Company, ProfileAuth
+
+
 # Create your views here.
 
 def login_view(request):
@@ -42,10 +45,19 @@ def logout_view(request):
     logout(request)
     return HttpResponseRedirect(reverse('accounts:login'))
 
-
+@login_required
 def company_view(request):
-    company = Company.objects.all()
+    userAuth = request.user
+    userAuthList = ProfileAuth.objects.filter(userAuth=userAuth)
+    authCompanyId = []
+    companyList =[]
+    for i in userAuthList:
+        authCompanyId.append(i.companyAuth.id)
+
+    for j in authCompanyId:
+        companyinstance = Company.objects.get(id=j)
+        companyList.append(companyinstance)
     context = {
-        'company_list' : company
+        'company_list' : companyList
     }
     return render(request, 'accounts/companylist.html', context)

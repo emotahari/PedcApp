@@ -13,9 +13,9 @@
 
 {% block content %}
 <form class="form-inline" action="" method="POST">
-    <p>{{ userAuth }}</p>
         <div class="row">
             {% csrf_token %}
+
             <div class="col-4">
                 <p><label for="id_projectName">نام محصول/خدمت درامدی:</label><input type="text" name="projectName" value="" maxlength="100" required="" id="id_projectName" class="form-control"></p>
                 <p><label for="id_realCostQ1">مقدار واقعی سه ماهه اول:</label><input type="number" name="realCostQ1" value="0" required="" id="id_realCostQ1" class="form-control"></p>
@@ -28,23 +28,23 @@
                 <p><label for="id_forcastCostQ2">مقدار پیش بینی سه ماهه دوم:</label><input type="number" name="forcastCostQ2" value="0" required="" id="id_forcastCostQ2" class="form-control"></p>
                 <p><label for="id_forcastCostQ3">مقدار پیش بینی سه ماهه سوم:</label><input type="number" name="forcastCostQ3" value="0" required="" id="id_forcastCostQ3" class="form-control"></p>
                 <p><label for="id_forcastCostQ4">مقدار پیش بینی سه ماهه چهارم:</label><input type="number" name="forcastCostQ4" value="0" required="" id="id_forcastCostQ4" class="form-control"></p>
-                <p><label for="id_yearOfForcast">YearOfForcast:</label><input type="number" name="yearOfForcast" value="1400" required="" id="id_yearOfForcast" class="form-control"></p>
+                <p><label for="id_yearOfForcast">سال بودجه ای:</label><input type="number" name="yearOfForcast" value="1400" required="" id="id_yearOfForcast" class="form-control"></p>
             </div>
             <div class="col-4">
 
-                <p><label for="id_currency">Currency:</label><select name="currency" id="id_currency" class="form-control">
+                <p><label for="id_currency">نوع ارز:</label><select name="currency" id="id_currency" class="form-control">
                     {% for c in currency %}
                         <option value="{{ c.id }}">{{ c.currencyName }}</option>
                     {% endfor %} </select></p>
-                <p><label for="id_company">Company:</label><select name="company" id="id_company"  class="form-control">
+                <p><label for="id_company">شرکت:</label><select name="company" id="id_company"  class="form-control">
                         <option value="{{ companies.id }}">{{ companies.name }}</option>
                     </select></p>
-                <p><label for="id_costType">CostType:</label>
-                    <select name="costType" class="form-control" id="id_costType">
+                <p><label for="id_costType">نوع هزینه:</label>
+                 <select name="costType" class="form-control" id="id_costType">
                     {% for c in costType %}
                         <option value="{{ c.id }}">{{ c.costTypeName }}</option>
                     {% endfor %} </select></p>
-                <p><label for="id_isInGroupe">هزینه درون گروهی:</label><input type="checkbox" name="isInGroupe" id="id_isInGroupe" checked="" class="form-check-input"></p>
+                <p><label for="id_isInGroupe">هزینه درون گروهی:</label></p><p><input type="checkbox" name="isInGroupe" id="id_isInGroupe" checked="" class="form-check-input"></p>
                 <p><input type="submit" class="btn btn-warning text-center" value="ثبت"></p>
             </div>
         </div>
@@ -89,7 +89,7 @@
                             <td>{{ d.forcastCostQ4 }}</td>
                             <td>{{ d.currency.currencyName }}</td>
                             <td>{{ d.isInGroupe }}</td>
-                                <td><a href="{% url 'budgeting:updateincome' d.id  %}" class="btn btn-warning">ویرایش</a></td>
+                                <td><a href="{% url 'budgeting:updatecostofsale' companies.id  d.id  %}" class="btn btn-warning">ویرایش</a></td>
                             <td><form   action="{% url 'budgeting:deleteincome' d.id%}" method="post" class="d-inline"> {% csrf_token %}
                                 <input type="submit" class="btn btn-danger" value="حذف">
                             </form></td>

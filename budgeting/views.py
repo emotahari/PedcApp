@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
 
@@ -10,6 +11,7 @@ from budgeting.models import Income, Currency, CostType, CostOfSales
 
 
 #  incomAdd
+@login_required
 def income_view(request, company_id):
     company = get_object_or_404(Company, pk=company_id)
     currency = Currency.objects.all()
@@ -61,7 +63,7 @@ def income_view(request, company_id):
 
     #  income delete
 
-
+@login_required
 def delete_income_data(request, id):
     if request.method == 'POST':
         deleted_income = Income.objects.get(pk=id)
@@ -72,7 +74,7 @@ def delete_income_data(request, id):
 
     # income edit
 
-
+@login_required
 def update_income_data(request, incomeId):
     if request.method == 'POST':
         ui = Income.objects.get(pk=incomeId)
@@ -90,25 +92,38 @@ def update_income_data(request, incomeId):
 
 # ########################  CostOfSales  ################################
 
-# ######## Add Viwe  ####################################################
-
-def addCostOfSales(request, id):
+# ######## ADD Viwe  #####  CostOfSales  ################################
+@login_required
+def addCostOfSales(request, id, costid=0):
     company = get_object_or_404(Company, pk=id)
     currency = Currency.objects.all()
     costType = CostType.objects.all()
-    costOfSales = CostOfSales.objects.all()
+    costOfSales = CostOfSales.objects.filter(company=id)
     userAuth = request.user
-    userAuthList = ProfileAuth.objects.filter(userAuth = userAuth)
+    userAuthList = ProfileAuth.objects.filter(userAuth=userAuth)
     b = []
     for a in userAuthList:
         b.append(a.companyAuth.id)
-    if request.method == "GET":
-        form = CostAddShow()
-        return render(request, 'budgeting/costofsales.html', {'form': form, 'companies': company, 'currency': currency
+    if id in b:
+        if request.method == "GET":
+            if costid == 0:
+                form = CostAddShow()
+            else:
+                costOfSales1 = CostOfSales.objects.get(pk=costid)
+                form = CostAddShow(instance=costOfSales1)
+            return render(request, 'budgeting/costofsales.html', {'form': form, 'companies': company, 'currency': currency
+                                                          ,'costType': costType, 'costOfSales': costOfSales, 'userAuth':b})
+        else:
+            if costid == 0 :
+                form = CostAddShow(request.POST)
+            else:
+                costOfSales1 = CostOfSales.objects.get(pk=costid)
+                form = CostAddShow(request.POST, instance=costOfSales1)
+            if form.is_valid():
+                form.save()
+            return render(request, 'budgeting/costofsales.html', {'form': form, 'companies': company, 'currency': currency
                                                           ,'costType': costType, 'costOfSales': costOfSales, 'userAuth':b})
     else:
-        form = CostAddShow(request.POST)
-        if form.is_valid():
-            form.save()
-        return render(request, 'budgeting/costofsales.html', {'form': form, 'companies': company, 'currency': currency
-                                                          ,'costType': costType, 'costOfSales': costOfSales, 'userAuth':b})
+        return HttpResponseRedirect(reverse('accounts:companyList'))
+
+# ######## DELETE Viwe  #####  CostOfSales  ################################

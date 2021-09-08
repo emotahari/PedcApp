@@ -9,5 +9,12 @@ urlpatterns = [
     path('cost/<int:id>', views.addCostOfSales, name='costofsale'),
     path('cost/<int:id>/<int:costid>', views.addCostOfSales, name='updatecostofsale'),
     path('cost/<int:id>', views.delete_income_data, name='deletecost'),
+    path('publiccost/<int:id>', views.addPublicCost, name='publiccost'),
+    path('etcoprincome/<int:id>', views.addEtcOprationlIncome, name='etcoprincome'),
+    path('etcoprcost/<int:id>', views.addEtcOprationalCost, name='etcoprcost'),
+    path('nonoprincome/<int:id>', views.addNonOprationalIncome, name='nonoprincome'),
+    path('nonoprcost/<int:id>', views.addNonOprationalCost, name='nonoprcost'),
+    path('tax/<int:id>', views.addTax, name='tax'),
+    path('loancost/<int:id>', views.addLoanCost, name='loancost'),
 
 ]

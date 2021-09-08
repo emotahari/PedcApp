@@ -8,7 +8,7 @@
 
 
 {% block title2 %}
-    قیمت تمام شده
+    هزینه مالی
 {% endblock title2 %}
 
 {% block content %}
@@ -17,17 +17,17 @@
             {% csrf_token %}
 
             <div class="col-4">
-                <p><label for="id_projectName">نام محصول/خدمت درامدی:</label><input type="text" name="projectName" value="" maxlength="100" required="" id="id_projectName" class="form-control"></p>
-                <p><label for="id_realCostQ1">مقدار واقعی سه ماهه اول:</label><input type="number" name="realCostQ1" value="0" required="" id="id_realCostQ1" class="form-control"></p>
-                <p><label for="id_realCostQ2">مقدار واقعی سه ماهه دوم:</label><input type="number" name="realCostQ2" value="0" required="" id="id_realCostQ2" class="form-control"></p>
-                <p><label for="id_realCostQ3">مقدار واقعی سه ماهه سوم:</label><input type="number" name="realCostQ3" value="0" required="" id="id_realCostQ3" class="form-control"></p>
-                <p><label for="id_realCostQ4">مقدار واقعی سه ماهه چهارم:</label><input type="number" name="realCostQ4" value="0" required="" id="id_realCostQ4" class="form-control"></p>
+                <p><label for="id_subject">نام محصول/خدمت درامدی:</label><input type="text" name="subject" value="" maxlength="100" required="" id="id_subject" class="form-control"></p>
+                <p><label for="id_realLoanCostQ1">مقدار واقعی سه ماهه اول:</label><input type="number" name="realLoanCostQ1" value="0" required="" id="id_realLoanCostQ1" class="form-control"></p>
+                <p><label for="id_realLoanCostQ2">مقدار واقعی سه ماهه دوم:</label><input type="number" name="realLoanCosttQ2" value="0" required="" id="id_realLoanCostQ2" class="form-control"></p>
+                <p><label for="id_realLoanCostQ3">مقدار واقعی سه ماهه سوم:</label><input type="number" name="realLoanCostQ3" value="0" required="" id="id_realLoanCostQ3" class="form-control"></p>
+                <p><label for="id_realLoanCostQ4">مقدار واقعی سه ماهه چهارم:</label><input type="number" name="realLoanCostQ4" value="0" required="" id="id_realLoanCostQ4" class="form-control"></p>
             </div>
             <div class="col-4">
-                <p><label for="id_forcastCostQ1">مقدار پیش بینی سه ماهه اول:</label><input type="number" name="forcastCostQ1" value="0" required="" id="id_forcastCostQ1" class="form-control"></p>
-                <p><label for="id_forcastCostQ2">مقدار پیش بینی سه ماهه دوم:</label><input type="number" name="forcastCostQ2" value="0" required="" id="id_forcastCostQ2" class="form-control"></p>
-                <p><label for="id_forcastCostQ3">مقدار پیش بینی سه ماهه سوم:</label><input type="number" name="forcastCostQ3" value="0" required="" id="id_forcastCostQ3" class="form-control"></p>
-                <p><label for="id_forcastCostQ4">مقدار پیش بینی سه ماهه چهارم:</label><input type="number" name="forcastCostQ4" value="0" required="" id="id_forcastCostQ4" class="form-control"></p>
+                <p><label for="id_forcastLoanCostQ1">مقدار پیش بینی سه ماهه اول:</label><input type="number" name="forcastLoanCostQ1" value="0" required="" id="id_forcastLoanCostQ1" class="form-control"></p>
+                <p><label for="id_forcastLoanCostQ2">مقدار پیش بینی سه ماهه دوم:</label><input type="number" name="forcastLoanCostQ2" value="0" required="" id="id_forcastLoanCostQ2" class="form-control"></p>
+                <p><label for="id_forcastLoanCostQ3">مقدار پیش بینی سه ماهه سوم:</label><input type="number" name="forcastLoanCostQ3" value="0" required="" id="id_forcastLoanCostQ3" class="form-control"></p>
+                <p><label for="id_forcastLoanCostQ4">مقدار پیش بینی سه ماهه چهارم:</label><input type="number" name="forcastLoanCostQ4" value="0" required="" id="id_forcastLoanCostQ4" class="form-control"></p>
                 <p><label for="id_yearOfForcast">سال بودجه ای:</label><input type="number" name="yearOfForcast" value="1400" required="" id="id_yearOfForcast" class="form-control"></p>
             </div>
             <div class="col-4">
@@ -39,11 +39,6 @@
                 <p><label for="id_company">شرکت:</label><select name="company" id="id_company"  class="form-control">
                         <option value="{{ companies.id }}">{{ companies.name }}</option>
                     </select></p>
-                <p><label for="id_costType">نوع هزینه:</label>
-                 <select name="costType" class="form-control" id="id_costType">
-                    {% for c in costType %}
-                        <option value="{{ c.id }}">{{ c.costTypeName }}</option>
-                    {% endfor %} </select></p>
                 <p><label for="id_isInGroupe">هزینه درون گروهی:</label></p><p><input type="checkbox" name="isInGroupe" id="id_isInGroupe" checked="" class="form-check-input"></p>
                 <p><input type="submit" class="btn btn-warning text-center" value="ثبت"></p>
             </div>
@@ -52,8 +47,8 @@
 
 
     <div class="container mt-5, p-3 mb-2 bg-light text-dark" >
-            <h5 class="text-center alert alert-info">اطلاعات قیمت تمام شده ثبت شده</h5>
-            {% if costOfSales %}
+            <h5 class="text-center alert alert-info">اطلاعات هزینه مالی</h5>
+            {% if loanCostloanCost %}
                 <table class="table table-striped">
                 <thead>
                     <tr class="table-active">
@@ -75,18 +70,18 @@
                 </thead>
                 <tbody>
 
-                        {% for d in  costOfSales  %}
+                        {% for d in  loanCost  %}
                             <tr >
                             <th scope="row">{{ d.id }}</th>
-                            <td>{{ d.projectName }}</td>
-                            <td>{{ d.realCostQ1 }}</td>
-                            <td>{{ d.realCostQ2 }}</td>
-                            <td>{{ d.realCostQ3 }}</td>
-                            <td>{{ d.realCostQ4 }}</td>
-                            <td>{{ d.forcastCostQ1 }}</td>
-                            <td>{{ d.forcastCostQ2 }}</td>
-                            <td>{{ d.forcastCostQ3 }}</td>
-                            <td>{{ d.forcastCostQ4 }}</td>
+                            <td>{{ d.subject }}</td>
+                            <td>{{ d.realloanCostQ1 }}</td>
+                            <td>{{ d.realloanCostQ2 }}</td>
+                            <td>{{ d.realloanCostQ3 }}</td>
+                            <td>{{ d.realloanCostQ4 }}</td>
+                            <td>{{ d.forcastloanCostQ1 }}</td>
+                            <td>{{ d.forcastloanCostQ2 }}</td>
+                            <td>{{ d.forcastloanCostQ3 }}</td>
+                            <td>{{ d.forcastTloanCostQ4 }}</td>
                             <td>{{ d.currency.currencyName }}</td>
                             <td>{{ d.isInGroupe }}</td>
                                 <td><a href="{% url 'budgeting:updatecostofsale' companies.id  d.id  %}" class="btn btn-warning">ویرایش</a></td>
@@ -106,8 +101,8 @@
     <div class="col"></div>
     <div class="col"></div>
     <div class="col"></div>
-    <a href="{% url 'budgeting:income' companies.id  %}" class="btn btn-info col p-2 m-2">مرحله قبل</a>
-    <a href="{% url 'budgeting:publiccost' companies.id  %}" class="btn btn-info col p-2 m-2">مرحله بعد</a>
+    <a href="{% url 'budgeting:tax' companies.id  %}" class="btn btn-info col p-2 m-2">مرحله قبل</a>
+    <a href="{% url 'budgeting:loancost' companies.id  %}" class="btn btn-info col p-2 m-2">مرحله بعد</a>
 </div>
     </div>
 {% endblock content %}

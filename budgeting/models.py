@@ -78,3 +78,168 @@ class CostOfSales(models.Model):
         return self.projectName
 
 
+class PublicCostType(models.Model):
+    class Meta:
+        verbose_name = 'نوع هزینه عمومی، اداری'
+        verbose_name_plural = 'نوع هزینه عمومی، اداری'
+
+    PublicCostTypeName = models.CharField('نوع هزینه', max_length=100, null=True)
+
+    def __str__(self):
+        return self.PublicCostTypeName
+
+
+class PublicCost(models.Model):
+    class Meta:
+        verbose_name = 'هزینه عمومی، اداری'
+        verbose_name_plural = 'هزینه عمومی، اداری'
+
+    subject = models.CharField('موضوع هزینه', max_length=100, null=True)
+    realPublicCostQ1 = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    realPublicCostQ2 = models.IntegerField("مقدار واقعی سه ماهه دوم", default=0)
+    realPublicCostQ3 = models.IntegerField("مقدار واقعی سه ماهه سوم", default=0)
+    realPublicCostQ4 = models.IntegerField("مقدار واقعی سه ماهه چهارم", default=0)
+    forcastPublicCostQ1 = models.IntegerField("مقدار پیش بینی سه ماهه اول", default=0)
+    forcastPublicCostQ2 = models.IntegerField("مقدار پیش بینی سه ماهه دوم", default=0)
+    forcastPublicCostQ3 = models.IntegerField("مقدار پیش بینی سه ماهه سوم", default=0)
+    forcastPublicCostQ4 = models.IntegerField("مقدار پیش بینی سه ماهه چهارم", default=0)
+    yearOfForcast = models.IntegerField(default=1400)
+    isInGroupe = models.BooleanField('هزینه درون گروهی', default=0)
+    currency = models.ForeignKey('Currency', on_delete=models.PROTECT, default=1)
+    company = models.ForeignKey('accounts.Company', on_delete=models.PROTECT, default=1)
+    publicCostType = models.ForeignKey(PublicCostType, on_delete=models.PROTECT, default=1)
+
+    def __str__(self):
+        return self.subject
+
+class EtcOprationalIncome(models.Model):
+    class Meta:
+        verbose_name = 'سایر درآمدهای عملیاتی'
+        verbose_name_plural = 'سایر درآمدهای عملیاتی'
+
+    etcOprationIncome = models.CharField('موضوع درامدی', max_length=100, null=True)
+    realetcOprationIncomeQ1 = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    realetcOprationIncomeQ2 = models.IntegerField("مقدار واقعی سه ماهه دوم", default=0)
+    realetcOprationIncomeQ3 = models.IntegerField("مقدار واقعی سه ماهه سوم", default=0)
+    realetcOprationIncomeQ4 = models.IntegerField("مقدار واقعی سه ماهه چهارم", default=0)
+    forcastetcOprationIncomeQ1 = models.IntegerField("مقدار پیش بینی سه ماهه اول", default=0)
+    forcastetcOprationIncomeQ2 = models.IntegerField("مقدار پیش بینی سه ماهه دوم", default=0)
+    forcastetcOprationIncomeQ3 = models.IntegerField("مقدار پیش بینی سه ماهه سوم", default=0)
+    forcastetcOprationIncomeQ4 = models.IntegerField("مقدار پیش بینی سه ماهه چهارم", default=0)
+    yearOfForcast = models.IntegerField(default=1400)
+    isInGroupe = models.BooleanField('درآمد درون گروهی', default=0)
+    currency = models.ForeignKey('Currency', on_delete=models.PROTECT, default=1)
+    company = models.ForeignKey('accounts.Company', on_delete=models.PROTECT, default=1)
+
+    def __str__(self):
+        return self.etcOprationIncom
+
+
+class EtcOprationalCost(models.Model):
+    class Meta:
+        verbose_name = 'سایر هزینه های عملیاتی'
+        verbose_name_plural = 'سایر هزینه های عملیاتی'
+
+    subject = models.CharField('موضوع هزینه', max_length=100, null=True)
+    realEtcOprationCostQ1 = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    realEtcOprationCostQ2 = models.IntegerField("مقدار واقعی سه ماهه دوم", default=0)
+    realEtcOprationCostQ3 = models.IntegerField("مقدار واقعی سه ماهه سوم", default=0)
+    realEtcOprationCostQ4 = models.IntegerField("مقدار واقعی سه ماهه چهارم", default=0)
+    forcastEtcOprationCostQ1 = models.IntegerField("مقدار پیش بینی سه ماهه اول", default=0)
+    forcastEtcOprationCostQ2 = models.IntegerField("مقدار پیش بینی سه ماهه دوم", default=0)
+    forcastEtcOprationCostQ3 = models.IntegerField("مقدار پیش بینی سه ماهه سوم", default=0)
+    forcastEtcOprationCostQ4 = models.IntegerField("مقدار پیش بینی سه ماهه چهارم", default=0)
+    yearOfForcast = models.IntegerField(default=1400)
+    isInGroupe = models.BooleanField('هزینه درون گروهی', default=0)
+    currency = models.ForeignKey('Currency', on_delete=models.PROTECT, default=1)
+    company = models.ForeignKey('accounts.Company', on_delete=models.PROTECT, default=1)
+
+    def __str__(self):
+        return self.subject
+
+class NonOprationalIncome(models.Model):
+    class Meta:
+        verbose_name = 'درآمدهای غیر عملیاتی'
+        verbose_name_plural = 'درآمدهای غیر عملیاتی'
+
+    nonOprationIncom = models.CharField('موضوع درامدی', max_length=100, null=True)
+    realNonOprationIncomeQ1 = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    realNonOprationIncomeQ2 = models.IntegerField("مقدار واقعی سه ماهه دوم", default=0)
+    realNonOprationIncomeQ3 = models.IntegerField("مقدار واقعی سه ماهه سوم", default=0)
+    realNonOprationIncomeQ4 = models.IntegerField("مقدار واقعی سه ماهه چهارم", default=0)
+    forcastNonOprationIncomeQ1 = models.IntegerField("مقدار پیش بینی سه ماهه اول", default=0)
+    forcastNonOprationIncomeQ2 = models.IntegerField("مقدار پیش بینی سه ماهه دوم", default=0)
+    forcastNonOprationIncomeQ3 = models.IntegerField("مقدار پیش بینی سه ماهه سوم", default=0)
+    forcastNonOprationIncomeQ4 = models.IntegerField("مقدار پیش بینی سه ماهه چهارم", default=0)
+    yearOfForcast = models.IntegerField(default=1400)
+    isInGroupe = models.BooleanField('درآمد درون گروهی', default=0)
+    currency = models.ForeignKey('Currency', on_delete=models.PROTECT, default=1)
+    company = models.ForeignKey('accounts.Company', on_delete=models.PROTECT, default=1)
+
+    def __str__(self):
+        return self.NonOprationIncom
+
+class NonOprationalCost(models.Model):
+    class Meta:
+        verbose_name = 'هزینه های غیر عملیاتی'
+        verbose_name_plural = 'هزینه های غیر عملیاتی'
+
+    subject = models.CharField('موضوع هزینه', max_length=100, null=True)
+    realNonOprationCostQ1 = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    realNonOprationCostQ2 = models.IntegerField("مقدار واقعی سه ماهه دوم", default=0)
+    realNonOprationCostQ3 = models.IntegerField("مقدار واقعی سه ماهه سوم", default=0)
+    realNonOprationCostQ4 = models.IntegerField("مقدار واقعی سه ماهه چهارم", default=0)
+    forcastNonOprationCostQ1 = models.IntegerField("مقدار پیش بینی سه ماهه اول", default=0)
+    forcastNonOprationCostQ2 = models.IntegerField("مقدار پیش بینی سه ماهه دوم", default=0)
+    forcastNonOprationCostQ3 = models.IntegerField("مقدار پیش بینی سه ماهه سوم", default=0)
+    forcastNonOprationCostQ4 = models.IntegerField("مقدار پیش بینی سه ماهه چهارم", default=0)
+    yearOfForcast = models.IntegerField(default=1400)
+    isInGroupe = models.BooleanField('هزینه درون گروهی', default=0)
+    currency = models.ForeignKey('Currency', on_delete=models.PROTECT, default=1)
+    company = models.ForeignKey('accounts.Company', on_delete=models.PROTECT, default=1)
+
+    def __str__(self):
+        return self.subject
+
+
+class Tax(models.Model):
+    class Meta:
+        verbose_name = 'مالیات'
+        verbose_name_plural = 'مالیات'
+
+    subject = models.CharField('موضوع مالیات', max_length=100, null=True)
+    realTaxQ1 = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    realTaxQ2 = models.IntegerField("مقدار واقعی سه ماهه دوم", default=0)
+    realTaxQ3 = models.IntegerField("مقدار واقعی سه ماهه سوم", default=0)
+    realTaxQ4 = models.IntegerField("مقدار واقعی سه ماهه چهارم", default=0)
+    forcastTaxQ1 = models.IntegerField("مقدار پیش بینی سه ماهه اول", default=0)
+    forcastTaxQ2 = models.IntegerField("مقدار پیش بینی سه ماهه دوم", default=0)
+    forcastTaxQ3 = models.IntegerField("مقدار پیش بینی سه ماهه سوم", default=0)
+    forcastTaxQ4 = models.IntegerField("مقدار پیش بینی سه ماهه چهارم", default=0)
+    yearOfForcast = models.IntegerField(default=1400)
+    currency = models.ForeignKey('Currency', on_delete=models.PROTECT, default=1)
+    company = models.ForeignKey('accounts.Company', on_delete=models.PROTECT, default=1)
+
+    def __str__(self):
+        return self.subject
+
+class LoanCost(models.Model):
+    class Meta:
+        verbose_name = 'هزینه مالی'
+        verbose_name_plural = 'هزینه مالی'
+
+    subject = models.CharField('موضوع هزینه مالی', max_length=100, null=True)
+    realLoanCostQ1 = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    realLoanCostQ2 = models.IntegerField("مقدار واقعی سه ماهه دوم", default=0)
+    realLoanCostQ3 = models.IntegerField("مقدار واقعی سه ماهه سوم", default=0)
+    realLoanCostQ4 = models.IntegerField("مقدار واقعی سه ماهه چهارم", default=0)
+    forcastLoanCostQ1 = models.IntegerField("مقدار پیش بینی سه ماهه اول", default=0)
+    forcastLoanCostQ2 = models.IntegerField("مقدار پیش بینی سه ماهه دوم", default=0)
+    forcastLoanCostQ3 = models.IntegerField("مقدار پیش بینی سه ماهه سوم", default=0)
+    forcastLoanCostQ4 = models.IntegerField("مقدار پیش بینی سه ماهه چهارم", default=0)
+    yearOfForcast = models.IntegerField(default=1400)
+    currency = models.ForeignKey('Currency', on_delete=models.PROTECT, default=1)
+    company = models.ForeignKey('accounts.Company', on_delete=models.PROTECT, default=1)
+
+    def __str__(self):
+        return self.subject

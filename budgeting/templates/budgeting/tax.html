@@ -19,7 +19,7 @@
             <div class="col-4">
                 <p><label for="id_subject">نام محصول/خدمت درامدی:</label><input type="text" name="subject" value="" maxlength="100" required="" id="id_subject" class="form-control"></p>
                 <p><label for="id_realTaxQ1">مقدار واقعی سه ماهه اول:</label><input type="number" name="realTaxQ1" value="0" required="" id="id_realTaxQ1" class="form-control"></p>
-                <p><label for="id_realTaxQ2">مقدار واقعی سه ماهه دوم:</label><input type="number" name="realTaxtQ2" value="0" required="" id="id_realTaxQ2" class="form-control"></p>
+                <p><label for="id_realTaxQ2">مقدار واقعی سه ماهه دوم:</label><input type="number" name="realTaxQ2" value="0" required="" id="id_realTaxQ2" class="form-control"></p>
                 <p><label for="id_realTaxQ3">مقدار واقعی سه ماهه سوم:</label><input type="number" name="realTaxQ3" value="0" required="" id="id_realTaxQ3" class="form-control"></p>
                 <p><label for="id_realTaxQ4">مقدار واقعی سه ماهه چهارم:</label><input type="number" name="realTaxQ4" value="0" required="" id="id_realTaxQ4" class="form-control"></p>
             </div>
@@ -39,7 +39,6 @@
                 <p><label for="id_company">شرکت:</label><select name="company" id="id_company"  class="form-control">
                         <option value="{{ companies.id }}">{{ companies.name }}</option>
                     </select></p>
-                <p><label for="id_isInGroupe">هزینه درون گروهی:</label></p><p><input type="checkbox" name="isInGroupe" id="id_isInGroupe" checked="" class="form-check-input"></p>
                 <p><input type="submit" class="btn btn-warning text-center" value="ثبت"></p>
             </div>
         </div>

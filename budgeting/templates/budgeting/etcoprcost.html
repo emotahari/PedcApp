@@ -18,16 +18,16 @@
 
             <div class="col-4">
                 <p><label for="id_subject">نام محصول/خدمت درامدی:</label><input type="text" name="subject" value="" maxlength="100" required="" id="id_subject" class="form-control"></p>
-                <p><label for="id_realetcOprationCostQ1">مقدار واقعی سه ماهه اول:</label><input type="number" name="realetcOprationCostQ1" value="0" required="" id="id_realetcOprationCostQ1" class="form-control"></p>
-                <p><label for="id_realetcOprationCostQ2">مقدار واقعی سه ماهه دوم:</label><input type="number" name="realetcOprationCostQ2" value="0" required="" id="id_realetcOprationCostQ2" class="form-control"></p>
-                <p><label for="id_realetcOprationCostQ3">مقدار واقعی سه ماهه سوم:</label><input type="number" name="realetcOprationCostQ3" value="0" required="" id="id_realetcOprationCostQ3" class="form-control"></p>
-                <p><label for="id_realetcOprationCostQ4">مقدار واقعی سه ماهه چهارم:</label><input type="number" name="realetcOprationCostQ4" value="0" required="" id="id_realetcOprationCostQ4" class="form-control"></p>
+                <p><label for="id_realEtcOprationCostQ1">مقدار واقعی سه ماهه اول:</label><input type="number" name="realEtcOprationCostQ1" value="0" required="" id="id_realEtcOprationCostQ1" class="form-control"></p>
+                <p><label for="id_realEtcOprationCostQ2">مقدار واقعی سه ماهه دوم:</label><input type="number" name="realEtcOprationCostQ2" value="0" required="" id="id_realEtcOprationCostQ2" class="form-control"></p>
+                <p><label for="id_realEtcOprationCostQ3">مقدار واقعی سه ماهه سوم:</label><input type="number" name="realEtcOprationCostQ3" value="0" required="" id="id_realEtcOprationCostQ3" class="form-control"></p>
+                <p><label for="id_realEtcOprationCostQ4">مقدار واقعی سه ماهه چهارم:</label><input type="number" name="realEtcOprationCostQ4" value="0" required="" id="id_realEtcOprationCostQ4" class="form-control"></p>
             </div>
             <div class="col-4">
-                <p><label for="id_forcasetcOprationtCostQ1">مقدار پیش بینی سه ماهه اول:</label><input type="number" name="forcastetcOprationCostQ1" value="0" required="" id="id_forcastetcOprationCostQ1" class="form-control"></p>
-                <p><label for="id_forcastetcOprationCostQ2">مقدار پیش بینی سه ماهه دوم:</label><input type="number" name="forcastetcOprationCostQ2" value="0" required="" id="id_forcastetcOprationCostQ2" class="form-control"></p>
-                <p><label for="id_forcastetcOprationCostQ3">مقدار پیش بینی سه ماهه سوم:</label><input type="number" name="forcastetcOprationCostQ3" value="0" required="" id="id_forcastetcOprationCostQ3" class="form-control"></p>
-                <p><label for="id_forcastetcOprationCostQ4">مقدار پیش بینی سه ماهه چهارم:</label><input type="number" name="forcastetcOprationCostQ4" value="0" required="" id="id_forcastetcOprationCostQ4" class="form-control"></p>
+                <p><label for="id_forcasEtcOprationtCostQ1">مقدار پیش بینی سه ماهه اول:</label><input type="number" name="forcastEtcOprationCostQ1" value="0" required="" id="id_forcastEtcOprationCostQ1" class="form-control"></p>
+                <p><label for="id_forcastEtcOprationCostQ2">مقدار پیش بینی سه ماهه دوم:</label><input type="number" name="forcastEtcOprationCostQ2" value="0" required="" id="id_forcastEtcOprationCostQ2" class="form-control"></p>
+                <p><label for="id_forcastEtcOprationCostQ3">مقدار پیش بینی سه ماهه سوم:</label><input type="number" name="forcastEtcOprationCostQ3" value="0" required="" id="id_forcastEtcOprationCostQ3" class="form-control"></p>
+                <p><label for="id_forcastEtcOprationCostQ4">مقدار پیش بینی سه ماهه چهارم:</label><input type="number" name="forcastEtcOprationCostQ4" value="0" required="" id="id_forcastEtcOprationCostQ4" class="form-control"></p>
                 <p><label for="id_yearOfForcast">سال بودجه ای:</label><input type="number" name="yearOfForcast" value="1400" required="" id="id_yearOfForcast" class="form-control"></p>
             </div>
             <div class="col-4">
@@ -74,14 +74,14 @@
                             <tr >
                             <th scope="row">{{ d.id }}</th>
                             <td>{{ d.subject }}</td>
-                            <td>{{ d.realetcOprationCostQ1 }}</td>
-                            <td>{{ d.realetcOprationCostQ2 }}</td>
-                            <td>{{ d.realetcOprationCostQ3 }}</td>
-                            <td>{{ d.realetcOprationCostQ4 }}</td>
-                            <td>{{ d.forcastetcOprationCostQ1 }}</td>
-                            <td>{{ d.forcastetcOprationCostQ2 }}</td>
-                            <td>{{ d.forcastetcOprationCostQ3 }}</td>
-                            <td>{{ d.forcastetcOprationCostQ4 }}</td>
+                            <td>{{ d.realEtcOprationCostQ1 }}</td>
+                            <td>{{ d.realEtcOprationCostQ2 }}</td>
+                            <td>{{ d.realEtcOprationCostQ3 }}</td>
+                            <td>{{ d.realEtcOprationCostQ4 }}</td>
+                            <td>{{ d.forcastEtcOprationCostQ1 }}</td>
+                            <td>{{ d.forcastEtcOprationCostQ2 }}</td>
+                            <td>{{ d.forcastEtcOprationCostQ3 }}</td>
+                            <td>{{ d.forcastEtcOprationCostQ4 }}</td>
                             <td>{{ d.currency.currencyName }}</td>
                             <td>{{ d.isInGroupe }}</td>
                                 <td><a href="{% url 'budgeting:updatecostofsale' companies.id  d.id  %}" class="btn btn-warning">ویرایش</a></td>

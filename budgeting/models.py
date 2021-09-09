@@ -10,6 +10,8 @@ class Currency(models.Model):
         verbose_name_plural = 'ارز'
 
     currencyName = models.CharField('نام ارز', max_length=100)
+    currencyRate = models.IntegerField("نرخ تبدیل به ریال", default=1)
+    yearOfForcast = models.IntegerField(default=1400)
 
     def __str__(self):
         return self.currencyName
@@ -83,10 +85,10 @@ class PublicCostType(models.Model):
         verbose_name = 'نوع هزینه عمومی، اداری'
         verbose_name_plural = 'نوع هزینه عمومی، اداری'
 
-    PublicCostTypeName = models.CharField('نوع هزینه', max_length=100, null=True)
+    publicCostTypeName = models.CharField('نوع هزینه', max_length=100, null=True)
 
     def __str__(self):
-        return self.PublicCostTypeName
+        return self.publicCostTypeName
 
 
 class PublicCost(models.Model):

@@ -404,16 +404,16 @@ def addLoanCost(request, id, loanCostId=0):
             if loanCostId == 0:
                 form = LoanCostForm()
             else:
-                tax1 = LoanCost.objects.get(pk=loanCostId)
-                form = LoanCostForm(instance=tax1)
+                loanCost1 = LoanCost.objects.get(pk=loanCostId)
+                form = LoanCostForm(instance=loanCost1)
             return render(request, 'budgeting/loancost.html', {'form': form, 'companies': company, 'currency': currency
                                                           , 'loanCost': loanCost, 'userAuth':b})
         else:
             if loanCostId == 0 :
                 form = LoanCostForm(request.POST)
             else:
-                tax1 = LoanCost.objects.get(pk=loanCostId)
-                form = LoanCostForm(request.POST, instance=tax1)
+                loanCost1 = LoanCost.objects.get(pk=loanCostId)
+                form = LoanCostForm(request.POST, instance=loanCost1)
             if form.is_valid():
                 form.save()
             return render(request, 'budgeting/loancost.html', {'form': form, 'companies': company, 'currency': currency
@@ -424,3 +424,25 @@ def addLoanCost(request, id, loanCostId=0):
 
 
 # ########################  END  #######################################
+
+
+@login_required
+def benefitSheetCal(request, id, year):
+    income = get_object_or_404(Income,pk=id,yearOfForcast=year )
+    sumOfrealIncomeQ1 = 0
+    sumOfrealIncomeQ2 = 0
+    sumOfrealIncomeQ3 = 0
+    sumOfrealIncomeQ4 = 0
+    for c in income:
+        sumOfrealIncomeQ1 = sumOfrealIncomeQ1 + c.realIncomeQ1
+        sumOfrealIncomeQ2 = sumOfrealIncomeQ2 + c.realIncomeQ2
+        sumOfrealIncomeQ3 = sumOfrealIncomeQ3 + c.realIncomeQ3
+        sumOfrealIncomeQ4 = sumOfrealIncomeQ4 + c.realIncomeQ4
+        sumOfforcastIncomeQ1 = sumOfforcastIncomeQ1 + c.forcastIncomeQ1
+        sumOfforcastIncomeQ2 = sumOfforcastIncomeQ2 + c.forcastIncomeQ2
+        sumOfforcastIncomeQ3 = sumOfforcastIncomeQ3 + c.forcastIncomeQ3
+        sumOfforcastIncomeQ4 = sumOfforcastIncomeQ4 + c.forcastIncomeQ4
+
+    incomeData = {'income1' : sumOfrealIncomeQ1, 'incom2': sumOfrealIncomeQ1 + sumOfrealIncomeQ2}
+    return  render(request, 'budgeting/sheet.html', {'incomdata':incomeData })
+

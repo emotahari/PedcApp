@@ -17,9 +17,9 @@
             {% csrf_token %}
 
             <div class="col-4">
-                <p><label for="id_subject">نام محصول/خدمت درامدی:</label><input type="text" name="subject" value="" maxlength="100" required="" id="id_subject" class="form-control"></p>
+                <p><label for="id_subject">موضوع هزینه مالی:</label><input type="text" name="subject" value="" maxlength="100" required="" id="id_subject" class="form-control"></p>
                 <p><label for="id_realLoanCostQ1">مقدار واقعی سه ماهه اول:</label><input type="number" name="realLoanCostQ1" value="0" required="" id="id_realLoanCostQ1" class="form-control"></p>
-                <p><label for="id_realLoanCostQ2">مقدار واقعی سه ماهه دوم:</label><input type="number" name="realLoanCosttQ2" value="0" required="" id="id_realLoanCostQ2" class="form-control"></p>
+                <p><label for="id_realLoanCostQ2">مقدار واقعی سه ماهه دوم:</label><input type="number" name="realLoanCostQ2" value="0" required="" id="id_realLoanCostQ2" class="form-control"></p>
                 <p><label for="id_realLoanCostQ3">مقدار واقعی سه ماهه سوم:</label><input type="number" name="realLoanCostQ3" value="0" required="" id="id_realLoanCostQ3" class="form-control"></p>
                 <p><label for="id_realLoanCostQ4">مقدار واقعی سه ماهه چهارم:</label><input type="number" name="realLoanCostQ4" value="0" required="" id="id_realLoanCostQ4" class="form-control"></p>
             </div>
@@ -39,7 +39,6 @@
                 <p><label for="id_company">شرکت:</label><select name="company" id="id_company"  class="form-control">
                         <option value="{{ companies.id }}">{{ companies.name }}</option>
                     </select></p>
-                <p><label for="id_isInGroupe">هزینه درون گروهی:</label></p><p><input type="checkbox" name="isInGroupe" id="id_isInGroupe" checked="" class="form-check-input"></p>
                 <p><input type="submit" class="btn btn-warning text-center" value="ثبت"></p>
             </div>
         </div>
@@ -48,7 +47,7 @@
 
     <div class="container mt-5, p-3 mb-2 bg-light text-dark" >
             <h5 class="text-center alert alert-info">اطلاعات هزینه مالی</h5>
-            {% if loanCostloanCost %}
+            {% if loanCost %}
                 <table class="table table-striped">
                 <thead>
                     <tr class="table-active">
@@ -102,7 +101,7 @@
     <div class="col"></div>
     <div class="col"></div>
     <a href="{% url 'budgeting:tax' companies.id  %}" class="btn btn-info col p-2 m-2">مرحله قبل</a>
-    <a href="{% url 'budgeting:loancost' companies.id  %}" class="btn btn-info col p-2 m-2">مرحله بعد</a>
+    <a href="{% url 'budgeting:sheet' companies.id 1400 %}" class="btn btn-info col p-2 m-2">سود و زیان</a>
 </div>
     </div>
 {% endblock content %}

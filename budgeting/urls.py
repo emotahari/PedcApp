@@ -16,5 +16,6 @@ urlpatterns = [
     path('nonoprcost/<int:id>', views.addNonOprationalCost, name='nonoprcost'),
     path('tax/<int:id>', views.addTax, name='tax'),
     path('loancost/<int:id>', views.addLoanCost, name='loancost'),
+    path('sheet/<int:id>/<int:year>', views.benefitSheetCal, name='sheet'),
 
 ]

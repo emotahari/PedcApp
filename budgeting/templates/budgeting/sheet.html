@@ -13,13 +13,14 @@
 
 {% block content %}
 
-{{ incomdata.income1 }}
-
-    <div class="row">
-    <div class="col"></div>
-    <div class="col"></div>
-    <div class="col"></div>
-    <a href="{% url 'budgeting:nonoprcost' companies.id  %}" class="btn btn-info col p-2 m-2">مرحله قبل</a>
-    <a href="{% url 'budgeting:loancost' companies.id  %}" class="btn btn-info col p-2 m-2">مرحله بعد</a>
+    <p>{{ incomdata }}</p>
+    <p>{{ costOfSalesData }}</p>
+    <p>{{ etcOprIcomeData }}</p>
+    <p>{{ etcOprCostData }}</p>
+    <p>{{ nonOprIncomeData }}</p>
+    <p>{{ nonOprCostData }}</p>
+    <p>{{ taxData }}</p>
+    <p>{{ loanCostData }}</p>
+    <p>{{ etcOfSheet }}</p>
 
 {% endblock content %}

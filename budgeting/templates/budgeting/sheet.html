@@ -12,7 +12,6 @@
 {% endblock title2 %}
 
 {% block content %}
-
     <p>{{ incomdata }}</p>
     <p>{{ costOfSalesData }}</p>
     <p>{{ etcOprIcomeData }}</p>
@@ -22,5 +21,44 @@
     <p>{{ taxData }}</p>
     <p>{{ loanCostData }}</p>
     <p>{{ etcOfSheet }}</p>
-
+    <div class="container mt-5, p-3 mb-2 bg-light text-dark" >
+            <h5 class="text-center alert alert-info">اطلاعات هزینه مالی</h5>
+                <table class="table table-striped">
+                <thead>
+                    <tr class="table-active">
+                        <th scope="col">شرح</th>
+                        <th scope="col">سه ماهه سال پایه</th>
+                        <th scope="col">شش ماهه سال پایه</th>
+                        <th scope="col">نه ماهه سال پایه</th>
+                        <th scope="col">تمام سال پایه</th>
+                        <th scope="col">سه ماهه سال بودجه</th>
+                        <th scope="col">شش ماهه سال بودجه</th>
+                        <th scope="col">نه ماهه سال بودجه</th>
+                        <th scope="col">تمام سال بودجه</th>
+                        <th scope="col">جزئیات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr >
+                            <th>درآمد</th>
+                            <td>{{ incomdata.realIncomeQ1 }}</td>
+                            <td>{{ incomdata.realIncomeQ1 }}</td>
+                            <td>{{ d.realloanCostQ2 }}</td>
+                            <td>{{ d.realloanCostQ3 }}</td>
+                            <td>{{ d.realloanCostQ4 }}</td>
+                            <td>{{ d.forcastloanCostQ1 }}</td>
+                            <td>{{ d.forcastloanCostQ2 }}</td>
+                            <td>{{ d.forcastloanCostQ3 }}</td>
+                            <td>{{ d.forcastTloanCostQ4 }}</td>
+                            <td>{{ d.currency.currencyName }}</td>
+                            <td>{{ d.isInGroupe }}</td>
+                                <td><a href="{% url 'budgeting:updatecostofsale' companies.id  d.id  %}" class="btn btn-warning">ویرایش</a></td>
+                            <td><form   action="{% url 'budgeting:deleteincome' d.id%}" method="post" class="d-inline"> {% csrf_token %}
+                                <input type="submit" class="btn btn-danger" value="حذف">
+                            </form></td>
+                            </tr>
+                        {
+                </tbody>
+                </table>
+    </div>
 {% endblock content %}

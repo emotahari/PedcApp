@@ -73,17 +73,15 @@
                             <tr >
                             <th scope="row">{{ d.id }}</th>
                             <td>{{ d.subject }}</td>
-                            <td>{{ d.realloanCostQ1 }}</td>
-                            <td>{{ d.realloanCostQ2 }}</td>
-                            <td>{{ d.realloanCostQ3 }}</td>
-                            <td>{{ d.realloanCostQ4 }}</td>
-                            <td>{{ d.forcastloanCostQ1 }}</td>
-                            <td>{{ d.forcastloanCostQ2 }}</td>
-                            <td>{{ d.forcastloanCostQ3 }}</td>
-                            <td>{{ d.forcastTloanCostQ4 }}</td>
-                            <td>{{ d.currency.currencyName }}</td>
-                            <td>{{ d.isInGroupe }}</td>
-                                <td><a href="{% url 'budgeting:updatecostofsale' companies.id  d.id  %}" class="btn btn-warning">ویرایش</a></td>
+                            <td>{{ d.realLoanCostQ1 }}</td>
+                            <td>{{ d.realLoanCostQ2 }}</td>
+                            <td>{{ d.realLoanCostQ3 }}</td>
+                            <td>{{ d.realLoanCostQ4 }}</td>
+                            <td>{{ d.forcastLoanCostQ1 }}</td>
+                            <td>{{ d.forcastLoanCostQ2 }}</td>
+                            <td>{{ d.forcastLoanCostQ3 }}</td>
+                            <td>{{ d.forcastLoanCostQ4 }}</td>
+                            <td>{{ d.currency.currencyName }}</td><td><a href="{% url 'budgeting:updatecostofsale' companies.id  d.id  %}" class="btn btn-warning">ویرایش</a></td>
                             <td><form   action="{% url 'budgeting:deleteincome' d.id%}" method="post" class="d-inline"> {% csrf_token %}
                                 <input type="submit" class="btn btn-danger" value="حذف">
                             </form></td>

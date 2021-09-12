@@ -22,7 +22,7 @@
     <p>{{ loanCostData }}</p>
     <p>{{ etcOfSheet }}</p>
     <div class="container mt-5, p-3 mb-2 bg-light text-dark" >
-            <h5 class="text-center alert alert-info">اطلاعات هزینه مالی</h5>
+
                 <table class="table table-striped">
                 <thead>
                     <tr class="table-active">
@@ -39,25 +39,79 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr >
+                    <tr>
                             <th>درآمد</th>
                             <td>{{ incomdata.realIncomeQ1 }}</td>
-                            <td>{{ incomdata.realIncomeQ1 }}</td>
-                            <td>{{ d.realloanCostQ2 }}</td>
-                            <td>{{ d.realloanCostQ3 }}</td>
-                            <td>{{ d.realloanCostQ4 }}</td>
-                            <td>{{ d.forcastloanCostQ1 }}</td>
-                            <td>{{ d.forcastloanCostQ2 }}</td>
-                            <td>{{ d.forcastloanCostQ3 }}</td>
-                            <td>{{ d.forcastTloanCostQ4 }}</td>
-                            <td>{{ d.currency.currencyName }}</td>
-                            <td>{{ d.isInGroupe }}</td>
-                                <td><a href="{% url 'budgeting:updatecostofsale' companies.id  d.id  %}" class="btn btn-warning">ویرایش</a></td>
-                            <td><form   action="{% url 'budgeting:deleteincome' d.id%}" method="post" class="d-inline"> {% csrf_token %}
-                                <input type="submit" class="btn btn-danger" value="حذف">
-                            </form></td>
-                            </tr>
-                        {
+                            <td>{{ incomdata.realIncomeQ2 }}</td>
+                            <td>{{ incomdata.realIncomeQ3 }}</td>
+                            <td>{{ incomdata.realIncomeQ4 }}</td>
+                            <td>{{ incomdata.forcastIncomeQ1 }}</td>
+                            <td>{{ incomdata.forcastIncomeQ2 }}</td>
+                            <td>{{ incomdata.forcastIncomeQ3 }}</td>
+                            <td>{{ incomdata.forcastIncomeQ4 }}</td>
+                            <td><a href="{% url 'budgeting:income' companies.id   %}" class="btn btn-warning">جزئیات</a></td>
+                    </tr>
+                    <tr>
+                            <th>قیمت تمام شده</th>
+                            <td>{{ costOfSalesData.realCostQ1 }}</td>
+                            <td>{{ costOfSalesData.realCostQ1 }}</td>
+                            <td>{{ costOfSalesData.realCostQ1 }}</td>
+                            <td>{{ costOfSalesData.realCostQ1 }}</td>
+                            <td>{{ costOfSalesData.forcastCostQ1 }}</td>
+                            <td>{{ costOfSalesData.forcastCostQ2 }}</td>
+                            <td>{{ costOfSalesData.forcastCostQ3 }}</td>
+                            <td>{{ costOfSalesData.forcastCostQ4 }}</td>
+                            <td><a href="{% url 'budgeting:costofsale' companies.id   %}" class="btn btn-warning">جزئیات</a></td>
+                    </tr>
+                     <tr>
+                            <th>سود(زیان)</th>
+                            <td>{{ etcOfSheet.sood11 }}</td>
+                            <td>{{ etcOfSheet.sood12 }}</td>
+                            <td>{{ etcOfSheet.sood13 }}</td>
+                            <td>{{ etcOfSheet.sood14 }}</td>
+                            <td>{{ etcOfSheet.sood15 }}</td>
+                            <td>{{ etcOfSheet.sood16 }}</td>
+                            <td>{{ etcOfSheet.sood17 }}</td>
+                            <td>{{ etcOfSheet.sood18 }}</td>
+                            <td><p></p></td>
+                    </tr>
+                    <tr>
+                            <th>سایر درآمدهای عملیاتی</th>
+                            <td>{{ etcOprIcomeData.realetcOprationIncomeQ1 }}</td>
+                            <td>{{ etcOprIcomeData.realetcOprationIncomeQ2 }}</td>
+                            <td>{{ etcOprIcomeData.realetcOprationIncomeQ3 }}</td>
+                            <td>{{ etcOprIcomeData.realetcOprationIncomeQ4 }}</td>
+                            <td>{{ etcOprIcomeData.forcastetcOprationIncomeQ1 }}</td>
+                            <td>{{ etcOprIcomeData.forcastetcOprationIncomeQ2 }}</td>
+                            <td>{{ etcOprIcomeData.forcastetcOprationIncomeQ3 }}</td>
+                            <td>{{ etcOprIcomeData.forcastetcOprationIncomeQ4 }}</td>
+                            <td><a href="{% url 'budgeting:etcoprincome' companies.id   %}" class="btn btn-warning">جزئیات</a></td>
+                    </tr>
+                    <tr>
+                            <th>سایر هزینه های عملیاتی</th>
+                            <td>{{ etcOprCostData.realEtcOprationCostQ1 }}</td>
+                            <td>{{ etcOprCostData.realEtcOprationCostQ1 }}</td>
+                            <td>{{ etcOprCostData.realEtcOprationCostQ1 }}</td>
+                            <td>{{ etcOprCostData.realEtcOprationCostQ1 }}</td>
+                            <td>{{ etcOprCostData.forcastEtcOprationCostQ1 }}</td>
+                            <td>{{ etcOprCostData.forcastEtcOprationCostQ2 }}</td>
+                            <td>{{ etcOprCostData.forcastEtcOprationCostQ3 }}</td>
+                            <td>{{ etcOprCostData.forcastEtcOprationCostQ4 }}</td>
+                            <td><a href="{% url 'budgeting:etcoprincome' companies.id   %}" class="btn btn-warning">جزئیات</a></td>
+                    </tr>
+                    <tr>
+                            <th>سود (زیان) عملیاتی</th>
+                            <td>{{ etcOprCostData.realEtcOprationCostQ1 }}</td>
+                            <td>{{ etcOprCostData.realEtcOprationCostQ1 }}</td>
+                            <td>{{ etcOprCostData.realEtcOprationCostQ1 }}</td>
+                            <td>{{ etcOprCostData.realEtcOprationCostQ1 }}</td>
+                            <td>{{ etcOprCostData.forcastEtcOprationCostQ1 }}</td>
+                            <td>{{ etcOprCostData.forcastEtcOprationCostQ2 }}</td>
+                            <td>{{ etcOprCostData.forcastEtcOprationCostQ3 }}</td>
+                            <td>{{ etcOprCostData.forcastEtcOprationCostQ4 }}</td>
+                            <td><p></p></td>
+                    </tr>
+
                 </tbody>
                 </table>
     </div>

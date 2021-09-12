@@ -451,10 +451,10 @@ def calculateIncome(data):
                   'realIncomeQ2': x1 + x2,
                   'realIncomeQ3': x1 + x2 + x3,
                   'realIncomeQ4': x1 + x2 + x3 + x4,
-                  'focastIncomeQ1': y1,
-                  'focastIncomeQ2': y1 + y2,
-                  'focastIncomeQ3': y1 + y2 + y3,
-                  'focastIncomeQ4': y1 + y2 + y3 + y4
+                  'forcastIncomeQ1': y1,
+                  'forcastIncomeQ2': y1 + y2,
+                  'forcastIncomeQ3': y1 + y2 + y3,
+                  'forcastIncomeQ4': y1 + y2 + y3 + y4
                   }
 
     return incomeData
@@ -707,7 +707,14 @@ def benefitSheetCal(request, id, year):
     nonOprCostData = calculateNonOprCost(nonOprCost)
     taxData = calculateTax(tax)
     loanCostData = calculateLoanCost(loanCost)
-    etcOfSheet = {'sood11': incomeData['realIncomeQ1'] - costOfSalesData['realCostQ1']}
+    etcOfSheet = {'sood11': incomeData['realIncomeQ1'] - costOfSalesData['realCostQ1'],
+                  'sood12': incomeData['realIncomeQ2'] - costOfSalesData['realCostQ2'],
+                  'sood13': incomeData['realIncomeQ3'] - costOfSalesData['realCostQ3'],
+                  'sood14': incomeData['realIncomeQ4'] - costOfSalesData['realCostQ4'],
+                  'sood15': incomeData['forcastIncomeQ1'] - costOfSalesData['forcastCostQ1'],
+                  'sood16': incomeData['forcastIncomeQ2'] - costOfSalesData['forcastCostQ2'],
+                  'sood17': incomeData['forcastIncomeQ3'] - costOfSalesData['forcastCostQ3'],
+                  'sood18': incomeData['forcastIncomeQ4'] - costOfSalesData['forcastCostQ4']}
 
     return  render(request, 'budgeting/sheet.html', {'incomdata': incomeData,
                                                      'costOfSalesData': costOfSalesData,

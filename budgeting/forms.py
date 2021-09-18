@@ -4,7 +4,7 @@ from budgeting.models import Income, CostOfSales, PublicCost, EtcOprationalIncom
     NonOprationalIncome, Tax, LoanCost
 
 
-class IncomeAdd(forms.ModelForm):
+class IncomeAddForm(forms.ModelForm):
     class Meta:
         model = Income
         fields = '__all__'

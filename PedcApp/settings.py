@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ls*y$+bsgf6sh*$414530vqdka^*0(p-fh!(m*4_2u_*o*w1!$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1", "192.168.1.108"]
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'budgeting.apps.BudgetingConfig',
     'django.contrib.humanize',
+    'bootstrap_modal_forms',
 ]
 
 MIDDLEWARE = [

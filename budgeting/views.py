@@ -100,14 +100,22 @@ def income_view(request, company_id, incomeid=0):
 
     #  income delete
 
+# @login_required
+# def delete_income_data(request, id):
+#     if request.method == 'POST':
+#         deleted_income = Income.objects.get(pk=id)
+#         companyid = deleted_income.company.id
+#         deleted_income.delete()
+#     return redirect('budgeting:income', companyid)
+#
+
 @login_required
 def delete_income_data(request, id):
-    if request.method == 'POST':
-        deleted_income = Income.objects.get(pk=id)
-        companyid = deleted_income.company.id
-        deleted_income.delete()
-    return redirect('budgeting:income', companyid)
-
+    # if request.method == 'POST':
+    #     deleted_income = Income.objects.get(pk=id)
+    #     companyid = deleted_income.company.id
+    #     deleted_income.delete()
+    return render(request, 'budgeting/modal.html', {'form': id})
 
 
 

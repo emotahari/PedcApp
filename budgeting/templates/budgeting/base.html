@@ -11,9 +11,9 @@
     <style type="text/css">body{direction:rtl;}</style>
 
 
+
 </head>
 <body>
-
     <div class="container mt-5, p-3 mb-2  bg-light text-dark">
     <div  class=" ">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -49,8 +49,8 @@
                 </div>
             </div>
         </nav>
-                <br>
 
+                <br>
     </div>
     <h2 class="text-center alert alert-warning">{% block title1 %}{% endblock title1 %} </h2>
     <div class="container mt-5,  mb-2">
@@ -67,22 +67,21 @@
     </div>
     </div>
     <h5 class="text-center alert alert-info">{% block title2 %}{% endblock title2 %}</h5>
-
     <div>
         {% block content %}
         {% endblock content %}
     </div>
+
     <footer class="bg-light text-center text-lg-start">
-
             <div class="text-center p-3 bg-dark text-secondary" >
-
                 <a class="text-secondary" href="https://www.pedc.ir/">مدیریت استراتژی و بودجه - گسترش انرژی پاسارگاد</a>
                 - © 2021 Copyright
             </div>
-
     </footer>
 <script src="{% static '/budgeting/js/bootstrap.js' %}"></script>
 <script src="{% static '/budgeting/js/popper.min.js' %}"></script>
 <script src="{% static '/budgeting/js/jquery.js' %}"></script>
+<script src="{% static '/budgeting/js/main.js' %}"></script>
+<script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
 </body>
 </html>

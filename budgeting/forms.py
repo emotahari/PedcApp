@@ -1,7 +1,8 @@
 from django import forms
 
 from budgeting.models import Income, CostOfSales, PublicCost, EtcOprationalIncome, EtcOprationalCost, NonOprationalCost, \
-    NonOprationalIncome, Tax, LoanCost
+    NonOprationalIncome, Tax, LoanCost, CurrentAsset, NonCurrentAsset, CurrentLiabilitiesType, \
+    NonCurrentLiabilitiesType, PropertyRights, CurrentLiabilities, NonCurrentLiabilities
 
 
 class IncomeAddForm(forms.ModelForm):
@@ -56,3 +57,31 @@ class LoanCostForm(forms.ModelForm):
     class Meta:
         model = LoanCost
         fields = '__all__'
+
+class CrrntAsstForm(forms.ModelForm):
+    class Meta:
+        model = CurrentAsset
+        fields = '__all__'
+
+class NCrrntAsstForm(forms.ModelForm):
+    class Meta:
+        model = NonCurrentAsset
+        fields = '__all__'
+
+
+class CrrntLbltForm(forms.ModelForm):
+    class Meta:
+        model = CurrentLiabilities
+        fields = '__all__'
+
+class NCrrntLbltForm(forms.ModelForm):
+    class Meta:
+        model = NonCurrentLiabilities
+        fields = '__all__'
+
+class PrprtyRightsForm(forms.ModelForm):
+    class Meta:
+        model = PropertyRights
+        fields = '__all__'
+
+

@@ -1,0 +1,257 @@
+{% extends 'budgeting/base.html' %}
+{% load humanize %}
+
+
+{% block title1 %}
+    شرکت
+    {{ companies.name }}
+{% endblock title1 %}
+
+
+{% block title2 %}
+    ترازنامه
+{% endblock title2 %}
+
+{% block content %}
+    <h5 class="text-center alert alert-success">دارایی جاری</h5>
+    <div class="container mt-5, p-3 mb-2 bg-light text-dark" >
+        <table class="table table-striped">
+                <thead>
+                    <tr class="table-active">
+                        <th scope="col">شرح</th>
+                        <th scope="col">سه ماهه سال پایه</th>
+                        <th scope="col">شش ماهه سال پایه</th>
+                        <th scope="col">نه ماهه سال پایه</th>
+                        <th scope="col">تمام سال پایه</th>
+                        <th scope="col">سه ماهه سال بودجه</th>
+                        <th scope="col">شش ماهه سال بودجه</th>
+                        <th scope="col">نه ماهه سال بودجه</th>
+                        <th scope="col">تمام سال بودجه</th>
+                        <th scope="col">جزئیات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for item in crrntAssetData.crrntAsst %}
+                    <tr>
+                            <th>{{ item.currentAssetType.currentAssetName}}</th>
+                            <td>{{ item.realQ1|intcomma:False }}</td>
+                            <td>{{ item.realQ2|intcomma:False }}</td>
+                            <td>{{ item.realQ3|intcomma:False }}</td>
+                            <td>{{ item.realQ4|intcomma:False }}</td>
+                            <td>{{ item.forcastQ1|intcomma:False }}</td>
+                            <td>{{ item.forcastQ2|intcomma:False }}</td>
+                            <td>{{ item.forcastQ3|intcomma:False }}</td>
+                            <td>{{ item.forcastQ4|intcomma:False }}</td>
+                            <td><a href="{% url 'budgeting:crrntasst' companies.id%}" class="btn btn-warning">جزئیات</a></td>
+
+                    </tr>
+                {% endfor %}
+                    <tr>
+                            <th>جمع دارایی جاری</th>
+                            <td>{{ crrntAssetData.sumCrrntAsset.realQ1|intcomma:False }}</td>
+                            <td>{{ crrntAssetData.sumCrrntAsset.realQ2|intcomma:False }}</td>
+                            <td>{{ crrntAssetData.sumCrrntAsset.realQ3|intcomma:False }}</td>
+                            <td>{{ crrntAssetData.sumCrrntAsset.realQ4|intcomma:False }}</td>
+                            <td>{{ crrntAssetData.sumCrrntAsset.forcastQ1|intcomma:False }}</td>
+                            <td>{{ crrntAssetData.sumCrrntAsset.forcastQ2|intcomma:False }}</td>
+                            <td>{{ crrntAssetData.sumCrrntAsset.forcastQ3|intcomma:False }}</td>
+                            <td>{{ crrntAssetData.sumCrrntAsset.forcastQ4|intcomma:False }}</td>
+                            <td></td>
+                    </tr>
+                </tbody>
+        </table>
+       <h5 class="text-center alert alert-success">دارایی غیر جاری</h5>
+        <table class="table table-striped">
+                <thead>
+                    <tr class="table-active">
+                        <th scope="col">شرح</th>
+                        <th scope="col">سه ماهه سال پایه</th>
+                        <th scope="col">شش ماهه سال پایه</th>
+                        <th scope="col">نه ماهه سال پایه</th>
+                        <th scope="col">تمام سال پایه</th>
+                        <th scope="col">سه ماهه سال بودجه</th>
+                        <th scope="col">شش ماهه سال بودجه</th>
+                        <th scope="col">نه ماهه سال بودجه</th>
+                        <th scope="col">تمام سال بودجه</th>
+                        <th scope="col">جزئیات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for item in nCrrntAssetData.nCrrntAsst %}
+                    <tr>
+                            <th>{{ item.nCurrentAssetType.nCurrentAssetName}}</th>
+                            <td>{{ item.realQ1|intcomma:False }}</td>
+                            <td>{{ item.realQ2|intcomma:False }}</td>
+                            <td>{{ item.realQ3|intcomma:False }}</td>
+                            <td>{{ item.realQ4|intcomma:False }}</td>
+                            <td>{{ item.forcastQ1|intcomma:False }}</td>
+                            <td>{{ item.forcastQ2|intcomma:False }}</td>
+                            <td>{{ item.forcastQ3|intcomma:False }}</td>
+                            <td>{{ item.forcastQ4|intcomma:False }}</td>
+                            <td><a href="{% url 'budgeting:ncrrntasst' companies.id%}" class="btn btn-warning">جزئیات</a></td>
+
+                    </tr>
+                {% endfor %}
+                    <tr>
+                            <th>جمع دارایی غیر جاری</th>
+                            <td>{{ nCrrntAssetData.sumNCrrntAsset.realQ1|intcomma:False }}</td>
+                            <td>{{ nCrrntAssetData.sumNCrrntAsset.realQ2|intcomma:False }}</td>
+                            <td>{{ nCrrntAssetData.sumNCrrntAsset.realQ3|intcomma:False }}</td>
+                            <td>{{ nCrrntAssetData.sumNCrrntAsset.realQ4|intcomma:False }}</td>
+                            <td>{{ nCrrntAssetData.sumNCrrntAsset.forcastQ1|intcomma:False }}</td>
+                            <td>{{ nCrrntAssetData.sumNCrrntAsset.forcastQ2|intcomma:False }}</td>
+                            <td>{{ nCrrntAssetData.sumNCrrntAsset.forcastQ3|intcomma:False }}</td>
+                            <td>{{ nCrrntAssetData.sumNCrrntAsset.forcastQ4|intcomma:False }}</td>
+                            <td></td>
+                    </tr>
+                </tbody>
+        </table>
+       <h5 class="text-center alert alert-success">بدهی جاری</h5>
+        </table>
+        <table class="table table-striped">
+                <thead>
+                    <tr class="table-active">
+                        <th scope="col">شرح</th>
+                        <th scope="col">سه ماهه سال پایه</th>
+                        <th scope="col">شش ماهه سال پایه</th>
+                        <th scope="col">نه ماهه سال پایه</th>
+                        <th scope="col">تمام سال پایه</th>
+                        <th scope="col">سه ماهه سال بودجه</th>
+                        <th scope="col">شش ماهه سال بودجه</th>
+                        <th scope="col">نه ماهه سال بودجه</th>
+                        <th scope="col">تمام سال بودجه</th>
+                        <th scope="col">جزئیات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for item in crrntLbltData.crntLblt %}
+                    <tr>
+                            <th>{{ item.currentLbltType.currentLbltName}}</th>
+                            <td>{{ item.realQ1|intcomma:False }}</td>
+                            <td>{{ item.realQ2|intcomma:False }}</td>
+                            <td>{{ item.realQ3|intcomma:False }}</td>
+                            <td>{{ item.realQ4|intcomma:False }}</td>
+                            <td>{{ item.forcastQ1|intcomma:False }}</td>
+                            <td>{{ item.forcastQ2|intcomma:False }}</td>
+                            <td>{{ item.forcastQ3|intcomma:False }}</td>
+                            <td>{{ item.forcastQ4|intcomma:False }}</td>
+                            <td><a href="{% url 'budgeting:crrntlblt' companies.id%}" class="btn btn-warning">جزئیات</a></td>
+
+                    </tr>
+                {% endfor %}
+                    <tr>
+                            <th>جمع بدهی جاری</th>
+                            <td>{{ crrntLbltData.sumCrrntLblt.realQ1|intcomma:False }}</td>
+                            <td>{{ crrntLbltData.sumCrrntLblt.realQ2|intcomma:False }}</td>
+                            <td>{{ crrntLbltData.sumCrrntLblt.realQ3|intcomma:False }}</td>
+                            <td>{{ crrntLbltData.sumCrrntLblt.realQ4|intcomma:False }}</td>
+                            <td>{{ crrntLbltData.sumCrrntLblt.forcastQ1|intcomma:False }}</td>
+                            <td>{{ crrntLbltData.sumCrrntLblt.forcastQ2|intcomma:False }}</td>
+                            <td>{{ crrntLbltData.sumCrrntLblt.forcastQ3|intcomma:False }}</td>
+                            <td>{{ crrntLbltData.sumCrrntLblt.forcastQ4|intcomma:False }}</td>
+                            <td></td>
+                    </tr>
+                </tbody>
+        </table>
+       <h5 class="text-center alert alert-success">بدهی غیر جاری</h5>
+        <table class="table table-striped">
+                <thead>
+                    <tr class="table-active">
+                        <th scope="col">شرح</th>
+                        <th scope="col">سه ماهه سال پایه</th>
+                        <th scope="col">شش ماهه سال پایه</th>
+                        <th scope="col">نه ماهه سال پایه</th>
+                        <th scope="col">تمام سال پایه</th>
+                        <th scope="col">سه ماهه سال بودجه</th>
+                        <th scope="col">شش ماهه سال بودجه</th>
+                        <th scope="col">نه ماهه سال بودجه</th>
+                        <th scope="col">تمام سال بودجه</th>
+                        <th scope="col">جزئیات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for item in nCrrntLbltData.nCrntLblt %}
+                    <tr>
+                            <th>{{ item.nCurrentLbltType.nCurrentLbltName}}</th>
+                            <td>{{ item.realQ1|intcomma:False }}</td>
+                            <td>{{ item.realQ2|intcomma:False }}</td>
+                            <td>{{ item.realQ3|intcomma:False }}</td>
+                            <td>{{ item.realQ4|intcomma:False }}</td>
+                            <td>{{ item.forcastQ1|intcomma:False }}</td>
+                            <td>{{ item.forcastQ2|intcomma:False }}</td>
+                            <td>{{ item.forcastQ3|intcomma:False }}</td>
+                            <td>{{ item.forcastQ4|intcomma:False }}</td>
+                            <td><a href="{% url 'budgeting:ncrrntlblt' companies.id%}" class="btn btn-warning">جزئیات</a></td>
+
+                    </tr>
+                {% endfor %}
+                    <tr>
+                            <th>جمع بدهی غیر جاری</th>
+                            <td>{{ nCrrntLbltData.sumNCrrntLblt.realQ1|intcomma:False }}</td>
+                            <td>{{ nCrrntLbltData.sumNCrrntLblt.realQ2|intcomma:False }}</td>
+                            <td>{{ nCrrntLbltData.sumNCrrntLblt.realQ3|intcomma:False }}</td>
+                            <td>{{ nCrrntLbltData.sumNCrrntLblt.realQ4|intcomma:False }}</td>
+                            <td>{{ nCrrntLbltData.sumNCrrntLblt.forcastQ1|intcomma:False }}</td>
+                            <td>{{ nCrrntLbltData.sumNCrrntLblt.forcastQ2|intcomma:False }}</td>
+                            <td>{{ nCrrntLbltData.sumNCrrntLblt.forcastQ3|intcomma:False }}</td>
+                            <td>{{ nCrrntLbltData.sumNCrrntLblt.forcastQ4|intcomma:False }}</td>
+                            <td></td>
+                    </tr>
+                </tbody>
+        </table>
+       <h5 class="text-center alert alert-success">حقوق مالکانه</h5>
+        <table class="table table-striped">
+                <thead>
+                    <tr class="table-active">
+                        <th scope="col">شرح</th>
+                        <th scope="col">سه ماهه سال پایه</th>
+                        <th scope="col">شش ماهه سال پایه</th>
+                        <th scope="col">نه ماهه سال پایه</th>
+                        <th scope="col">تمام سال پایه</th>
+                        <th scope="col">سه ماهه سال بودجه</th>
+                        <th scope="col">شش ماهه سال بودجه</th>
+                        <th scope="col">نه ماهه سال بودجه</th>
+                        <th scope="col">تمام سال بودجه</th>
+                        <th scope="col">جزئیات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for item in prprtyRightsData.prprtyRights %}
+                    <tr>
+                            <th>{{ item.prprtyRightsType.prprtyRightsName}}</th>
+                            <td>{{ item.realQ1|intcomma:False }}</td>
+                            <td>{{ item.realQ2|intcomma:False }}</td>
+                            <td>{{ item.realQ3|intcomma:False }}</td>
+                            <td>{{ item.realQ4|intcomma:False }}</td>
+                            <td>{{ item.forcastQ1|intcomma:False }}</td>
+                            <td>{{ item.forcastQ2|intcomma:False }}</td>
+                            <td>{{ item.forcastQ3|intcomma:False }}</td>
+                            <td>{{ item.forcastQ4|intcomma:False }}</td>
+                            <td><a href="{% url 'budgeting:prprtyRights' companies.id%}" class="btn btn-warning">جزئیات</a></td>
+
+                    </tr>
+                {% endfor %}
+                    <tr>
+                            <th>جمع حقوق مالکانه</th>
+                            <td>{{ prprtyRightsData.sumPrprtyRight.realQ1|intcomma:False }}</td>
+                            <td>{{ prprtyRightsData.sumPrprtyRight.realQ2|intcomma:False }}</td>
+                            <td>{{ prprtyRightsData.sumPrprtyRight.realQ3|intcomma:False }}</td>
+                            <td>{{ prprtyRightsData.sumPrprtyRight.realQ4|intcomma:False }}</td>
+                            <td>{{ prprtyRightsData.sumPrprtyRight.forcastQ1|intcomma:False }}</td>
+                            <td>{{ prprtyRightsData.sumPrprtyRight.forcastQ2|intcomma:False }}</td>
+                            <td>{{ prprtyRightsData.sumPrprtyRight.forcastQ3|intcomma:False }}</td>
+                            <td>{{ prprtyRightsData.sumPrprtyRight.forcastQ4|intcomma:False }}</td>
+                            <td></td>
+                    </tr>
+                </tbody>
+        </table>
+    </div>
+    <div class="row">
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+    <a href="{% url 'budgeting:prprtyRights' companies.id  %}" class="btn btn-info col p-2 m-2">مرحله قبل</a>
+
+</div>
+{% endblock content %}
+

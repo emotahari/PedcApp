@@ -245,3 +245,180 @@ class LoanCost(models.Model):
 
     def __str__(self):
         return self.subject
+
+
+
+
+# #############################      Balance sheet      ################################
+
+
+class CurrentAssetsType(models.Model):
+    class Meta:
+        verbose_name = 'نوع دارایی جاری'
+        verbose_name_plural = 'نوع دارایی جاری'
+
+    currentAssetName = models.CharField('نام حساب', max_length=100)
+    description = models.CharField('توضیحات', max_length=500)
+    accountCode = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.currentAssetName
+
+class CurrentAsset(models.Model):
+    class Meta:
+        verbose_name = 'دارایی جاری'
+        verbose_name_plural = 'دارایی جاری'
+
+    currentAssetType = models.ForeignKey('CurrentAssetsType', on_delete=models.PROTECT, default=1)
+    realQ1 = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    realQ2 = models.IntegerField("مقدار واقعی سه ماهه دوم", default=0)
+    realQ3 = models.IntegerField("مقدار واقعی سه ماهه سوم", default=0)
+    realQ4 = models.IntegerField("مقدار واقعی سه ماهه چهارم", default=0)
+    forcastQ1 = models.IntegerField("مقدار پیش بینی سه ماهه اول", default=0)
+    forcastQ2 = models.IntegerField("مقدار پیش بینی سه ماهه دوم", default=0)
+    forcastQ3 = models.IntegerField("مقدار پیش بینی سه ماهه سوم", default=0)
+    forcastQ4 = models.IntegerField("مقدار پیش بینی سه ماهه چهارم", default=0)
+    yearOfForcast = models.IntegerField(default=1400)
+    # currency = models.ForeignKey('Currency', on_delete=models.PROTECT, default=1)
+    company = models.ForeignKey('accounts.Company', on_delete=models.PROTECT, default=1)
+
+    def __str__(self):
+        return str(self.id)
+
+
+class NonCurrentAssetsType(models.Model):
+    class Meta:
+        verbose_name = 'نوع دارایی غیر جاری'
+        verbose_name_plural = 'نوع دارایی غیر جاری'
+
+    nCurrentAssetName = models.CharField('نام حساب', max_length=100)
+    description = models.CharField('توضیحات', max_length=500)
+    accountCode = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.nCurrentAssetName
+
+class NonCurrentAsset(models.Model):
+    class Meta:
+        verbose_name = 'دارایی غیر جاری'
+        verbose_name_plural = 'دارایی غیر جاری'
+
+    nCurrentAssetType = models.ForeignKey('NonCurrentAssetsType', on_delete=models.PROTECT, default=1)
+    realQ1 = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    realQ2 = models.IntegerField("مقدار واقعی سه ماهه دوم", default=0)
+    realQ3 = models.IntegerField("مقدار واقعی سه ماهه سوم", default=0)
+    realQ4 = models.IntegerField("مقدار واقعی سه ماهه چهارم", default=0)
+    forcastQ1 = models.IntegerField("مقدار پیش بینی سه ماهه اول", default=0)
+    forcastQ2 = models.IntegerField("مقدار پیش بینی سه ماهه دوم", default=0)
+    forcastQ3 = models.IntegerField("مقدار پیش بینی سه ماهه سوم", default=0)
+    forcastQ4 = models.IntegerField("مقدار پیش بینی سه ماهه چهارم", default=0)
+    yearOfForcast = models.IntegerField(default=1400)
+    # currency = models.ForeignKey('Currency', on_delete=models.PROTECT, default=1)
+    company = models.ForeignKey('accounts.Company', on_delete=models.PROTECT, default=1)
+
+    def __str__(self):
+        return str(self.id)
+
+
+class CurrentLiabilitiesType(models.Model):
+    class Meta:
+        verbose_name = 'نوع بدهی جاری'
+        verbose_name_plural = 'نوع بدهی جاری'
+
+    currentLbltName = models.CharField('نام حساب', max_length=100)
+    description = models.CharField('توضیحات', max_length=500)
+    accountCode = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.currentLbltName
+
+class CurrentLiabilities(models.Model):
+    class Meta:
+        verbose_name = 'بدهی جاری'
+        verbose_name_plural = 'بدهی جاری'
+
+    currentLbltType = models.ForeignKey('CurrentLiabilitiesType', on_delete=models.PROTECT, default=1)
+    realQ1 = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    realQ2 = models.IntegerField("مقدار واقعی سه ماهه دوم", default=0)
+    realQ3 = models.IntegerField("مقدار واقعی سه ماهه سوم", default=0)
+    realQ4 = models.IntegerField("مقدار واقعی سه ماهه چهارم", default=0)
+    forcastQ1 = models.IntegerField("مقدار پیش بینی سه ماهه اول", default=0)
+    forcastQ2 = models.IntegerField("مقدار پیش بینی سه ماهه دوم", default=0)
+    forcastQ3 = models.IntegerField("مقدار پیش بینی سه ماهه سوم", default=0)
+    forcastQ4 = models.IntegerField("مقدار پیش بینی سه ماهه چهارم", default=0)
+    yearOfForcast = models.IntegerField(default=1400)
+    # currency = models.ForeignKey('Currency', on_delete=models.PROTECT, default=1)
+    company = models.ForeignKey('accounts.Company', on_delete=models.PROTECT, default=1)
+
+    def __str__(self):
+        return str(self.id)
+
+class NonCurrentLiabilitiesType(models.Model):
+    class Meta:
+        verbose_name = 'نوع بدهی غیر جاری'
+        verbose_name_plural = 'نوع بدهی غیر جاری'
+
+    nCurrentLbltName = models.CharField('نام حساب', max_length=100)
+    description = models.CharField('توضیحات', max_length=500)
+    accountCode = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.nCurrentLbltName
+
+class NonCurrentLiabilities(models.Model):
+    class Meta:
+        verbose_name = 'بدهی غیر جاری'
+        verbose_name_plural = 'بدهی غیر جاری'
+
+    nCurrentLbltType = models.ForeignKey('NonCurrentLiabilitiesType', on_delete=models.PROTECT, default=1)
+    realQ1 = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    realQ2 = models.IntegerField("مقدار واقعی سه ماهه دوم", default=0)
+    realQ3 = models.IntegerField("مقدار واقعی سه ماهه سوم", default=0)
+    realQ4 = models.IntegerField("مقدار واقعی سه ماهه چهارم", default=0)
+    forcastQ1 = models.IntegerField("مقدار پیش بینی سه ماهه اول", default=0)
+    forcastQ2 = models.IntegerField("مقدار پیش بینی سه ماهه دوم", default=0)
+    forcastQ3 = models.IntegerField("مقدار پیش بینی سه ماهه سوم", default=0)
+    forcastQ4 = models.IntegerField("مقدار پیش بینی سه ماهه چهارم", default=0)
+    yearOfForcast = models.IntegerField(default=1400)
+    # currency = models.ForeignKey('Currency', on_delete=models.PROTECT, default=1)
+    company = models.ForeignKey('accounts.Company', on_delete=models.PROTECT, default=1)
+
+    def __str__(self):
+        return str(self.id)
+
+
+
+class PropertyRightsType(models.Model):
+    class Meta:
+        verbose_name = 'نوع حقوق مالکانه'
+        verbose_name_plural = 'نوع حقوق مالکانه'
+
+    prprtyRightsName = models.CharField('نام حساب', max_length=100)
+    description = models.CharField('توضیحات', max_length=500)
+    accountCode = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.prprtyRightsName
+
+class PropertyRights(models.Model):
+    class Meta:
+        verbose_name = 'حقوق مالکانه'
+        verbose_name_plural = 'حقوق مالکانه'
+
+    prprtyRightsType = models.ForeignKey('PropertyRightsType', on_delete=models.PROTECT, default=1)
+    realQ1 = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    realQ2 = models.IntegerField("مقدار واقعی سه ماهه دوم", default=0)
+    realQ3 = models.IntegerField("مقدار واقعی سه ماهه سوم", default=0)
+    realQ4 = models.IntegerField("مقدار واقعی سه ماهه چهارم", default=0)
+    forcastQ1 = models.IntegerField("مقدار پیش بینی سه ماهه اول", default=0)
+    forcastQ2 = models.IntegerField("مقدار پیش بینی سه ماهه دوم", default=0)
+    forcastQ3 = models.IntegerField("مقدار پیش بینی سه ماهه سوم", default=0)
+    forcastQ4 = models.IntegerField("مقدار پیش بینی سه ماهه چهارم", default=0)
+    yearOfForcast = models.IntegerField(default=1400)
+    # currency = models.ForeignKey('Currency', on_delete=models.PROTECT, default=1)
+    company = models.ForeignKey('accounts.Company', on_delete=models.PROTECT, default=1)
+
+    def __str__(self):
+        return str(self.id)
+
+

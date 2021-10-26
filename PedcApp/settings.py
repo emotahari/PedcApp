@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'budgeting.apps.BudgetingConfig',
     'django.contrib.humanize',
-    'bootstrap_modal_forms',
 ]
 
 MIDDLEWARE = [

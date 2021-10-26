@@ -86,8 +86,9 @@
                             <td>{{ d.currency.currencyName }}</td>
                             <td>{{ d.isInGroupe }}</td>
                                 <td><a href="{% url 'budgeting:updateincome' d.id  %}" class="btn btn-warning">ویرایش</a></td>
-                            <td><a href="" data-toggle="modal" data-target="#modalDelete">حذف</a></td></tr>
-                                <!-- Button trigger modal -->
+                                <td><form   action="{% url 'budgeting:deleteincome' d.id%}" method="post" class="d-inline"> {% csrf_token %}
+                                <input type="submit" class="btn btn-danger" value="حذف">
+                            </form></td>
 
 
 
@@ -108,10 +109,5 @@
     <a href="{% url 'budgeting:costofsale' companies.id  %}" class="btn btn-info col p-2 m-2">مرحله بعد</a>
 </div>
 
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Launch demo modal
-    </button>
-
-{% include "budgeting/modal.html" %}
 
 {% endblock content %}

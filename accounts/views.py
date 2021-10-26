@@ -52,7 +52,8 @@ def company_view(request):
     authCompanyId = []
     companyList =[]
     for i in userAuthList:
-        authCompanyId.append(i.companyAuth.id)
+        if i.companyAuth.id not in authCompanyId:
+            authCompanyId.append(i.companyAuth.id)
 
     for j in authCompanyId:
         companyinstance = Company.objects.get(id=j)

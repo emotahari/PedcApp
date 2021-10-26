@@ -1,0 +1,59 @@
+{% extends 'budgeting/base.html' %}
+{% load static %}
+
+
+{% block title1 %}
+    شرکت
+    {{ cmpny.name }}
+{% endblock title1 %}
+
+
+{% block title2 %}
+    داشبورد
+{% endblock title2 %}
+
+{% block content %}
+<form class="form-inline" action="" method="POST">
+        <div class="row">
+            <div class="col-3">
+                           <a href="{% url 'budgeting:income' cmpny.id%}" class="btn btn-outline-dark" style="width: 18rem;height: 100%">
+                                    <span><img src="{% static '/budgeting/img/in.png' %}" class="card-img-top" alt="..."></span>
+                                    <div class="card-body">
+                                     <span><h5 class="card-title " >تدوین صورت سود و زیان</h5></span>
+{#                                     <br>#}
+{#                                     <span><a href="#" class="btn btn-warning">انتخاب</a></span>#}
+                                    </div>
+                           </a>
+            </div>
+            <div class="col-3">
+                                         <a href="{% url 'budgeting:crrntasst' cmpny.id%}" class="btn btn-outline-dark" style="width: 18rem;height: 100%">
+                                    <span><img src="{% static '/budgeting/img/bs.png' %}" class="card-img-top" alt="..."></span>
+                                    <div class="card-body">
+                                     <span><h5 class="card-title " >تدوین ترازنامه بودجه ای</h5></span>
+{#                                     <br>#}
+{#                                     <span><a href="#" class="btn btn-warning">انتخاب</a></span>#}
+                                    </div>
+                           </a>
+            </div>
+            <div class="col-3">
+                                         <a href="{% url 'budgeting:income' cmpny.id%}" class="btn btn-outline-dark" style="width: 18rem;height: 100%">
+                                    <span><img src="{% static '/budgeting/img/cs.png' %}" class="card-img-top" alt="..."></span>
+                                    <div class="card-body">
+                                     <span><h5 class="card-title " >تدوین منابع مصارف</h5></span>
+{#                                     <br>#}
+{#                                     <span><a href="#" class="btn btn-warning">انتخاب</a></span>#}
+                                    </div>
+                           </a>
+            </div>
+        </div>
+</form>
+
+    <div class="row">
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+    <a href="{% url 'budgeting:nonoprcost' cmpny.id  %}" class="btn btn-info col p-2 m-2">مرحله قبل</a>
+
+</div>
+    </div>
+{% endblock content %}

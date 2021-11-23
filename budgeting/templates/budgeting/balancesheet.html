@@ -105,7 +105,38 @@
                             <td></td>
                     </tr>
                 </tbody>
+        </table >
+    <h5 class="text-center alert alert-dark">جمع دارایی ها</h5>
+        <table  class="table table-striped">
+                <thead>
+                    <tr class="table-active">
+                        <th scope="col">شرح</th>
+                        <th scope="col">سه ماهه سال پایه</th>
+                        <th scope="col">شش ماهه سال پایه</th>
+                        <th scope="col">نه ماهه سال پایه</th>
+                        <th scope="col">تمام سال پایه</th>
+                        <th scope="col">سه ماهه سال بودجه</th>
+                        <th scope="col">شش ماهه سال بودجه</th>
+                        <th scope="col">نه ماهه سال بودجه</th>
+                        <th scope="col">تمام سال بودجه</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                            <th>جمع دارایی </th>
+                            <td>{{ asstsumdata.realQ1|intcomma:False }}</td>
+                            <td>{{ asstsumdata.realQ2|intcomma:False }}</td>
+                            <td>{{ asstsumdata.realQ3|intcomma:False }}</td>
+                            <td>{{ asstsumdata.realQ4|intcomma:False }}</td>
+                            <td>{{ asstsumdata.forcastQ1|intcomma:False }}</td>
+                            <td>{{ asstsumdata.forcastQ2|intcomma:False }}</td>
+                            <td>{{ asstsumdata.forcastQ3|intcomma:False }}</td>
+                            <td>{{ asstsumdata.forcastQ4|intcomma:False }}</td>
+
+                    </tr>
+                </tbody>
         </table>
+
        <h5 class="text-center alert alert-success">بدهی جاری</h5>
         </table>
         <table class="table table-striped">
@@ -199,6 +230,36 @@
                     </tr>
                 </tbody>
         </table>
+        <h5 class="text-center alert alert-dark">جمع بدهی ها</h5>
+        <table  class="table table-striped">
+                <thead>
+                    <tr class="table-active">
+                        <th scope="col">شرح</th>
+                        <th scope="col">سه ماهه سال پایه</th>
+                        <th scope="col">شش ماهه سال پایه</th>
+                        <th scope="col">نه ماهه سال پایه</th>
+                        <th scope="col">تمام سال پایه</th>
+                        <th scope="col">سه ماهه سال بودجه</th>
+                        <th scope="col">شش ماهه سال بودجه</th>
+                        <th scope="col">نه ماهه سال بودجه</th>
+                        <th scope="col">تمام سال بودجه</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                            <th>جمع بدهی </th>
+                            <td>{{ lbltsumdata.realQ1|intcomma:False }}</td>
+                            <td>{{ lbltsumdata.realQ2|intcomma:False }}</td>
+                            <td>{{ lbltsumdata.realQ3|intcomma:False }}</td>
+                            <td>{{ lbltsumdata.realQ4|intcomma:False }}</td>
+                            <td>{{ lbltsumdata.forcastQ1|intcomma:False }}</td>
+                            <td>{{ lbltsumdata.forcastQ2|intcomma:False }}</td>
+                            <td>{{ lbltsumdata.forcastQ3|intcomma:False }}</td>
+                            <td>{{ lbltsumdata.forcastQ4|intcomma:False }}</td>
+
+                    </tr>
+                </tbody>
+        </table>
        <h5 class="text-center alert alert-success">حقوق مالکانه</h5>
         <table class="table table-striped">
                 <thead>
@@ -242,6 +303,36 @@
                             <td>{{ prprtyRightsData.sumPrprtyRight.forcastQ3|intcomma:False }}</td>
                             <td>{{ prprtyRightsData.sumPrprtyRight.forcastQ4|intcomma:False }}</td>
                             <td></td>
+                    </tr>
+                </tbody>
+        </table>
+        <h5 class="text-center alert alert-dark">جمع حقوق مالکانه و بدهی ها</h5>
+        <table  class="table table-striped">
+                <thead>
+                    <tr class="table-active">
+                        <th scope="col">شرح</th>
+                        <th scope="col">سه ماهه سال پایه</th>
+                        <th scope="col">شش ماهه سال پایه</th>
+                        <th scope="col">نه ماهه سال پایه</th>
+                        <th scope="col">تمام سال پایه</th>
+                        <th scope="col">سه ماهه سال بودجه</th>
+                        <th scope="col">شش ماهه سال بودجه</th>
+                        <th scope="col">نه ماهه سال بودجه</th>
+                        <th scope="col">تمام سال بودجه</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                            <th>جمع حقوق مالکانه و بدهی ها </th>
+                            <td>{{ lbltprprtysumdata.realQ1|intcomma:False }}</td>
+                            <td>{{ lbltprprtysumdata.realQ2|intcomma:False }}</td>
+                            <td>{{ lbltprprtysumdata.realQ3|intcomma:False }}</td>
+                            <td>{{ lbltprprtysumdata.realQ4|intcomma:False }}</td>
+                            <td>{{ lbltprprtysumdata.forcastQ1|intcomma:False }}</td>
+                            <td>{{ lbltprprtysumdata.forcastQ2|intcomma:False }}</td>
+                            <td>{{ lbltprprtysumdata.forcastQ3|intcomma:False }}</td>
+                            <td>{{ lbltprprtysumdata.forcastQ4|intcomma:False }}</td>
+
                     </tr>
                 </tbody>
         </table>

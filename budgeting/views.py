@@ -15,7 +15,6 @@ from budgeting.models import Income, Currency, CostType, CostOfSales, PublicCost
     CurrentLiabilitiesType, NonCurrentLiabilitiesType, PropertyRightsType
 
 
-
 @login_required
 def user_auth(request, id):
     userAuth = request.user
@@ -65,7 +64,6 @@ def income_view(request, company_id, incomeid=0):
                               , 'incomeList': incomeList, 'userAuth': b})
     else:
         return HttpResponseRedirect(reverse('accounts:companyList'))
-
 
     # ---------------------------------------
     # company = get_object_or_404(Company, pk=company_id)
@@ -118,6 +116,7 @@ def income_view(request, company_id, incomeid=0):
 
     #  income delete
 
+
 @login_required
 def delete_income_data(request, id):
     deleted_income = Income.objects.get(pk=id)
@@ -129,9 +128,8 @@ def delete_income_data(request, id):
     else:
         return HttpResponseRedirect(reverse('accounts:companyList'))
 
-
-
     # income edit
+
 
 @login_required
 def update_income_data(request, incomeId):
@@ -170,20 +168,23 @@ def addCostOfSales(request, id, costid=0):
             else:
                 costOfSales1 = CostOfSales.objects.get(pk=costid)
                 form = CostAddShow(instance=costOfSales1)
-            return render(request, 'budgeting/costofsales.html', {'form': form, 'companies': company, 'currency': currency
-                                                          ,'costType': costType, 'costOfSales': costOfSales, 'userAuth':b})
+            return render(request, 'budgeting/costofsales.html',
+                          {'form': form, 'companies': company, 'currency': currency
+                              , 'costType': costType, 'costOfSales': costOfSales, 'userAuth': b})
         else:
-            if costid == 0 :
+            if costid == 0:
                 form = CostAddShow(request.POST)
             else:
                 costOfSales1 = CostOfSales.objects.get(pk=costid)
                 form = CostAddShow(request.POST, instance=costOfSales1)
             if form.is_valid():
                 form.save()
-            return render(request, 'budgeting/costofsales.html', {'form': form, 'companies': company, 'currency': currency
-                                                          ,'costType': costType, 'costOfSales': costOfSales, 'userAuth':b})
+            return render(request, 'budgeting/costofsales.html',
+                          {'form': form, 'companies': company, 'currency': currency
+                              , 'costType': costType, 'costOfSales': costOfSales, 'userAuth': b})
     else:
         return HttpResponseRedirect(reverse('accounts:companyList'))
+
 
 # ######## DELETE Viwe  #####  CostOfSales  ################################
 @login_required
@@ -196,6 +197,7 @@ def delete_costOfSale_data(request, id):
         return redirect('budgeting:costofsale', companyid)
     else:
         return HttpResponseRedirect(reverse('accounts:companyList'))
+
 
 # ########   START   ##########  PublicCost  ##########################
 
@@ -220,20 +222,23 @@ def addPublicCost(request, id, pubCostId=0):
             else:
                 publicCost1 = PublicCost.objects.get(pk=pubCostId)
                 form = PublicCostForm(instance=publicCost1)
-            return render(request, 'budgeting/publiccost.html', {'form': form, 'companies': company, 'currency': currency
-                                                          ,'publicCostType': publicCostType, 'publicCost': publicCost, 'userAuth':b})
+            return render(request, 'budgeting/publiccost.html',
+                          {'form': form, 'companies': company, 'currency': currency
+                              , 'publicCostType': publicCostType, 'publicCost': publicCost, 'userAuth': b})
         else:
-            if pubCostId == 0 :
+            if pubCostId == 0:
                 form = PublicCostForm(request.POST)
             else:
                 publicCost1 = PublicCost.objects.get(pk=pubCostId)
                 form = PublicCostForm(request.POST, instance=publicCost1)
             if form.is_valid():
                 form.save()
-            return render(request, 'budgeting/publiccost.html', {'form': form, 'companies': company, 'currency': currency
-                                                          ,'publicCostType': publicCostType, 'publicCost': publicCost, 'userAuth':b})
+            return render(request, 'budgeting/publiccost.html',
+                          {'form': form, 'companies': company, 'currency': currency
+                              , 'publicCostType': publicCostType, 'publicCost': publicCost, 'userAuth': b})
     else:
         return HttpResponseRedirect(reverse('accounts:companyList'))
+
 
 @login_required
 def delete_PublicCost_data(request, id):
@@ -245,6 +250,7 @@ def delete_PublicCost_data(request, id):
         return redirect('budgeting:publiccost', companyid)
     else:
         return HttpResponseRedirect(reverse('accounts:companyList'))
+
 
 # ########################  END  #######################################
 
@@ -271,18 +277,20 @@ def addEtcOprationlIncome(request, id, etcOprInId=0):
             else:
                 etcOpratinalIncome1 = EtcOprationalIncome.objects.get(pk=etcOprInId)
                 form = EtcOprationlIncomeForm(instance=etcOpratinalIncome1)
-            return render(request, 'budgeting/etcoprincome.html', {'form': form, 'companies': company, 'currency': currency
-                                                          , 'etcOpratinalIncome': etcOpratinalIncome, 'userAuth':b})
+            return render(request, 'budgeting/etcoprincome.html',
+                          {'form': form, 'companies': company, 'currency': currency
+                              , 'etcOpratinalIncome': etcOpratinalIncome, 'userAuth': b})
         else:
-            if etcOprInId == 0 :
+            if etcOprInId == 0:
                 form = EtcOprationlIncomeForm(request.POST)
             else:
                 etcOpratinalIncome1 = EtcOprationalIncome.objects.get(pk=etcOprInId)
                 form = EtcOprationlIncomeForm(request.POST, instance=etcOpratinalIncome1)
             if form.is_valid():
                 form.save()
-            return render(request, 'budgeting/etcoprincome.html', {'form': form, 'companies': company, 'currency': currency
-                                                          ,'etcOpratinalIncome': etcOpratinalIncome, 'userAuth':b})
+            return render(request, 'budgeting/etcoprincome.html',
+                          {'form': form, 'companies': company, 'currency': currency
+                              , 'etcOpratinalIncome': etcOpratinalIncome, 'userAuth': b})
     else:
         return HttpResponseRedirect(reverse('accounts:companyList'))
 
@@ -297,6 +305,8 @@ def delete_etcOprIn_data(request, id):
         return redirect('budgeting:etcoprincome', companyid)
     else:
         return HttpResponseRedirect(reverse('accounts:companyList'))
+
+
 # ########################  END  #######################################
 
 
@@ -322,20 +332,23 @@ def addEtcOprationalCost(request, id, etcOprCoctId=0):
             else:
                 etcOprCoct1 = EtcOprationalCost.objects.get(pk=etcOprCoctId)
                 form = EtcOprationlCostForm(instance=etcOprCoct1)
-            return render(request, 'budgeting/etcoprcost.html', {'form': form, 'companies': company, 'currency': currency
-                                                          , 'etcOprCoct': etcOprCoct, 'userAuth':b})
+            return render(request, 'budgeting/etcoprcost.html',
+                          {'form': form, 'companies': company, 'currency': currency
+                              , 'etcOprCoct': etcOprCoct, 'userAuth': b})
         else:
-            if etcOprCoctId == 0 :
+            if etcOprCoctId == 0:
                 form = EtcOprationlCostForm(request.POST)
             else:
                 etcOprCoct1 = EtcOprationalCost.objects.get(pk=etcOprCoctId)
                 form = EtcOprationlCostForm(request.POST, instance=etcOprCoct1)
             if form.is_valid():
                 form.save()
-            return render(request, 'budgeting/etcoprcost.html', {'form': form, 'companies': company, 'currency': currency
-                                                          , 'etcOprCoct': etcOprCoct, 'userAuth':b})
+            return render(request, 'budgeting/etcoprcost.html',
+                          {'form': form, 'companies': company, 'currency': currency
+                              , 'etcOprCoct': etcOprCoct, 'userAuth': b})
     else:
         return HttpResponseRedirect(reverse('accounts:companyList'))
+
 
 @login_required
 def delete_etcOprCost_data(request, id):
@@ -374,20 +387,23 @@ def addNonOprationalIncome(request, id, nonOprInId=0):
             else:
                 nonOpratinalIncome1 = NonOprationalIncome.objects.get(pk=nonOprInId)
                 form = NonOprationlIncometForm(instance=nonOpratinalIncome1)
-            return render(request, 'budgeting/nonoprincome.html', {'form': form, 'companies': company, 'currency': currency
-                                                          , 'nonOpratinalIncome': nonOpratinalIncome, 'userAuth':b})
+            return render(request, 'budgeting/nonoprincome.html',
+                          {'form': form, 'companies': company, 'currency': currency
+                              , 'nonOpratinalIncome': nonOpratinalIncome, 'userAuth': b})
         else:
-            if nonOprInId == 0 :
+            if nonOprInId == 0:
                 form = NonOprationlIncometForm(request.POST)
             else:
                 nonOpratinalIncome1 = NonOprationalIncome.objects.get(pk=nonOprInId)
                 form = NonOprationlIncometForm(request.POST, instance=nonOpratinalIncome1)
             if form.is_valid():
                 form.save()
-            return render(request, 'budgeting/nonoprincome.html', {'form': form, 'companies': company, 'currency': currency
-                                                          ,'nonOpratinalIncome': nonOpratinalIncome, 'userAuth':b})
+            return render(request, 'budgeting/nonoprincome.html',
+                          {'form': form, 'companies': company, 'currency': currency
+                              , 'nonOpratinalIncome': nonOpratinalIncome, 'userAuth': b})
     else:
         return HttpResponseRedirect(reverse('accounts:companyList'))
+
 
 @login_required
 def delete_nonOprIn_data(request, id):
@@ -399,6 +415,7 @@ def delete_nonOprIn_data(request, id):
         return redirect('budgeting:nonoprincome', companyid)
     else:
         return HttpResponseRedirect(reverse('accounts:companyList'))
+
 
 # ########################  END  #######################################
 
@@ -425,20 +442,23 @@ def addNonOprationalCost(request, id, nonOprostId=0):
             else:
                 nonOpratinalCost1 = NonOprationalCost.objects.get(pk=nonOprostId)
                 form = NonOprationlCostForm(instance=nonOpratinalCost1)
-            return render(request, 'budgeting/nonoprcost.html', {'form': form, 'companies': company, 'currency': currency
-                                                          , 'nonOpratinalCost': nonOpratinalCost, 'userAuth':b})
+            return render(request, 'budgeting/nonoprcost.html',
+                          {'form': form, 'companies': company, 'currency': currency
+                              , 'nonOpratinalCost': nonOpratinalCost, 'userAuth': b})
         else:
-            if nonOprostId == 0 :
+            if nonOprostId == 0:
                 form = NonOprationlCostForm(request.POST)
             else:
                 nonOpratinalCost1 = NonOprationalCost.objects.get(pk=nonOprostId)
                 form = NonOprationlCostForm(request.POST, instance=nonOpratinalCost1)
             if form.is_valid():
                 form.save()
-            return render(request, 'budgeting/nonoprcost.html', {'form': form, 'companies': company, 'currency': currency
-                                                          ,'nonOpratinalCost': nonOpratinalCost, 'userAuth':b})
+            return render(request, 'budgeting/nonoprcost.html',
+                          {'form': form, 'companies': company, 'currency': currency
+                              , 'nonOpratinalCost': nonOpratinalCost, 'userAuth': b})
     else:
         return HttpResponseRedirect(reverse('accounts:companyList'))
+
 
 @login_required
 def delete_nonOprCost_data(request, id):
@@ -450,6 +470,7 @@ def delete_nonOprCost_data(request, id):
         return redirect('budgeting:nonoprcost', companyid)
     else:
         return HttpResponseRedirect(reverse('accounts:companyList'))
+
 
 # ########################  END  #######################################
 
@@ -477,9 +498,9 @@ def addTax(request, id, taxId=0):
                 tax1 = Tax.objects.get(pk=taxId)
                 form = TaxForm(instance=tax1)
             return render(request, 'budgeting/tax.html', {'form': form, 'companies': company, 'currency': currency
-                                                          , 'tax': tax, 'userAuth':b})
+                , 'tax': tax, 'userAuth': b})
         else:
-            if taxId == 0 :
+            if taxId == 0:
                 form = TaxForm(request.POST)
             else:
                 tax1 = Tax.objects.get(pk=taxId)
@@ -487,9 +508,10 @@ def addTax(request, id, taxId=0):
             if form.is_valid():
                 form.save()
             return render(request, 'budgeting/tax.html', {'form': form, 'companies': company, 'currency': currency
-                                                          ,'tax': tax, 'userAuth':b})
+                , 'tax': tax, 'userAuth': b})
     else:
         return HttpResponseRedirect(reverse('accounts:companyList'))
+
 
 @login_required
 def delete_tax(request, id):
@@ -501,6 +523,7 @@ def delete_tax(request, id):
         return redirect('budgeting:tax', companyid)
     else:
         return HttpResponseRedirect(reverse('accounts:companyList'))
+
 
 # ########################  END  #######################################
 
@@ -528,9 +551,9 @@ def addLoanCost(request, id, loanCostId=0):
                 loanCost1 = LoanCost.objects.get(pk=loanCostId)
                 form = LoanCostForm(instance=loanCost1)
             return render(request, 'budgeting/loancost.html', {'form': form, 'companies': company, 'currency': currency
-                                                          , 'loanCost': loanCost, 'userAuth':b})
+                , 'loanCost': loanCost, 'userAuth': b})
         else:
-            if loanCostId == 0 :
+            if loanCostId == 0:
                 form = LoanCostForm(request.POST)
             else:
                 loanCost1 = LoanCost.objects.get(pk=loanCostId)
@@ -538,9 +561,10 @@ def addLoanCost(request, id, loanCostId=0):
             if form.is_valid():
                 form.save()
             return render(request, 'budgeting/loancost.html', {'form': form, 'companies': company, 'currency': currency
-                                                          ,'loanCost': loanCost, 'userAuth':b})
+                , 'loanCost': loanCost, 'userAuth': b})
     else:
         return HttpResponseRedirect(reverse('accounts:companyList'))
+
 
 @login_required
 def delete_LoanCost(request, id):
@@ -557,8 +581,7 @@ def delete_LoanCost(request, id):
 # ########################  END  #######################################
 
 
-def calculateIncome(data,year):
-
+def calculateIncome(data, year):
     x1 = 0
     x2 = 0
     x3 = 0
@@ -592,6 +615,7 @@ def calculateIncome(data,year):
 
     return incomeData
 
+
 def calculateCostOfSale(data):
     x1 = 0
     x2 = 0
@@ -615,16 +639,17 @@ def calculateCostOfSale(data):
         y4 = y4 + c.forcastCostQ4 * currencyRate
 
     costOfSaleData = {'realCostQ1': x1,
-                  'realCostQ2': x1 + x2,
-                  'realCostQ3': x1 + x2 + x3,
-                  'realCostQ4': x1 + x2 + x3 + x4,
-                  'forcastCostQ1': y1,
-                  'forcastCostQ2': y1 + y2,
-                  'forcastCostQ3': y1 + y2 + y3,
-                  'forcastCostQ4': y1 + y2 + y3 + y4
-                  }
+                      'realCostQ2': x1 + x2,
+                      'realCostQ3': x1 + x2 + x3,
+                      'realCostQ4': x1 + x2 + x3 + x4,
+                      'forcastCostQ1': y1,
+                      'forcastCostQ2': y1 + y2,
+                      'forcastCostQ3': y1 + y2 + y3,
+                      'forcastCostQ4': y1 + y2 + y3 + y4
+                      }
 
     return costOfSaleData
+
 
 def calculatePublicCost(data):
     x1 = 0
@@ -649,14 +674,14 @@ def calculatePublicCost(data):
         y4 = y4 + c.forcastPublicCostQ4 * currencyRate
 
     publicCostData = {'realPublicCostQ1': x1,
-                  'realPublicCostQ2': x1 + x2,
-                  'realPublicCostQ3': x1 + x2 + x3,
-                  'realPublicCostQ4': x1 + x2 + x3 + x4,
-                  'forcastPublicCostQ1': y1,
-                  'forcastPublicCostQ2': y1 + y2,
-                  'forcastPublicCostQ3': y1 + y2 + y3,
-                  'forcastPublicCostQ4': y1 + y2 + y3 + y4
-                  }
+                      'realPublicCostQ2': x1 + x2,
+                      'realPublicCostQ3': x1 + x2 + x3,
+                      'realPublicCostQ4': x1 + x2 + x3 + x4,
+                      'forcastPublicCostQ1': y1,
+                      'forcastPublicCostQ2': y1 + y2,
+                      'forcastPublicCostQ3': y1 + y2 + y3,
+                      'forcastPublicCostQ4': y1 + y2 + y3 + y4
+                      }
 
     return publicCostData
 
@@ -691,9 +716,10 @@ def calculateEtcOprIcome(data):
                        'forcastEtcOprationIncomeQ2': y1 + y2,
                        'forcastEtcOprationIncomeQ3': y1 + y2 + y3,
                        'forcastEtcOprationIncomeQ4': y1 + y2 + y3 + y4
-                      }
+                       }
 
     return etcOprIcomeData
+
 
 def calculateEtcOprCost(data):
     x1 = 0
@@ -760,7 +786,7 @@ def calculateNonOprIncome(data):
                         'forcastNonOprationIncomeQ2': y1 + y2,
                         'forcastNonOprationIncomeQ3': y1 + y2 + y3,
                         'forcastNonOprationIncomeQ4': y1 + y2 + y3 + y4
-                      }
+                        }
 
     return nonOprIncomeData
 
@@ -788,16 +814,17 @@ def calculateNonOprCost(data):
         y4 = y4 + c.forcastNonOprationCostQ4 * currencyRate
 
     nonOprCostData = {'realNonOprationCostQ1': x1,
-                        'realNonOprationCostQ2': x1 + x2,
-                        'realNonOprationCostQ3': x1 + x2 + x3,
-                        'realNonOprationCostQ4': x1 + x2 + x3 + x4,
-                        'forcastNonOprationCostQ1': y1,
-                        'forcastNonOprationCostQ2': y1 + y2,
-                        'forcastNonOprationCostQ3': y1 + y2 + y3,
-                        'forcastNonOprationCostQ4': y1 + y2 + y3 + y4
+                      'realNonOprationCostQ2': x1 + x2,
+                      'realNonOprationCostQ3': x1 + x2 + x3,
+                      'realNonOprationCostQ4': x1 + x2 + x3 + x4,
+                      'forcastNonOprationCostQ1': y1,
+                      'forcastNonOprationCostQ2': y1 + y2,
+                      'forcastNonOprationCostQ3': y1 + y2 + y3,
+                      'forcastNonOprationCostQ4': y1 + y2 + y3 + y4
                       }
 
     return nonOprCostData
+
 
 def calculateTax(data):
     x1 = 0
@@ -833,6 +860,7 @@ def calculateTax(data):
 
     return taxData
 
+
 def calculateLoanCost(data):
     x1 = 0
     x2 = 0
@@ -856,17 +884,16 @@ def calculateLoanCost(data):
         y4 = y4 + c.forcastLoanCostQ4 * currencyRate
 
     loanCostData = {'realLoanCostQ1': x1,
-               'realLoanCostQ2': x1 + x2,
-               'realLoanCostQ3': x1 + x2 + x3,
-               'realLoanCostQ4': x1 + x2 + x3 + x4,
-               'forcastLoanCostQ1': y1,
-               'forcastLoanCostQ2': y1 + y2,
-               'forcastLoanCostQ3': y1 + y2 + y3,
-               'forcastLoanCostQ4': y1 + y2 + y3 + y4
-               }
+                    'realLoanCostQ2': x1 + x2,
+                    'realLoanCostQ3': x1 + x2 + x3,
+                    'realLoanCostQ4': x1 + x2 + x3 + x4,
+                    'forcastLoanCostQ1': y1,
+                    'forcastLoanCostQ2': y1 + y2,
+                    'forcastLoanCostQ3': y1 + y2 + y3,
+                    'forcastLoanCostQ4': y1 + y2 + y3 + y4
+                    }
 
     return loanCostData
-
 
 
 @login_required
@@ -881,7 +908,7 @@ def benefitSheetCal(request, id, year):
     nonOprCost = NonOprationalCost.objects.filter(company=id, yearOfForcast=year)
     tax = Tax.objects.filter(company=id, yearOfForcast=year)
     loanCost = LoanCost.objects.filter(company=id, yearOfForcast=year)
-    incomeData = calculateIncome(income,year)
+    incomeData = calculateIncome(income, year)
     costOfSalesData = calculateCostOfSale(costOfSales)
     publicCostData = calculatePublicCost(publicCost)
     etcOprIcomeData = calculateEtcOprIcome(etcOprIcome)
@@ -945,12 +972,6 @@ def benefitSheetCal(request, id, year):
     sood67 = sood57 - loanCostData['forcastLoanCostQ3']
     sood68 = sood58 - loanCostData['forcastLoanCostQ4']
 
-
-
-
-
-
-
     etcOfSheet = {'sood11': sood11, 'sood12': sood12, 'sood13': sood13, 'sood14': sood14, 'sood15': sood15,
                   'sood16': sood16, 'sood17': sood17, 'sood18': sood18,
                   'sood21': sood21, 'sood22': sood22, 'sood23': sood23, 'sood24': sood24, 'sood25': sood25,
@@ -965,17 +986,17 @@ def benefitSheetCal(request, id, year):
                   'sood66': sood66, 'sood67': sood67, 'sood68': sood68
                   }
 
-    return  render(request, 'budgeting/sheet.html', {'incomdata': incomeData,
-                                                     'costOfSalesData': costOfSalesData,
-                                                     'publicCostData' : publicCostData,
-                                                     'etcOprIcomeData' : etcOprIcomeData,
-                                                     'etcOprCostData' : etcOprCostData,
-                                                     'nonOprIncomeData' : nonOprIncomeData,
-                                                     'nonOprCostData' : nonOprCostData,
-                                                     'taxData' : taxData,
-                                                     'loanCostData' : loanCostData,
-                                                     'etcOfSheet' : etcOfSheet,
-                                                     'companies': company })
+    return render(request, 'budgeting/sheet.html', {'incomdata': incomeData,
+                                                    'costOfSalesData': costOfSalesData,
+                                                    'publicCostData': publicCostData,
+                                                    'etcOprIcomeData': etcOprIcomeData,
+                                                    'etcOprCostData': etcOprCostData,
+                                                    'nonOprIncomeData': nonOprIncomeData,
+                                                    'nonOprCostData': nonOprCostData,
+                                                    'taxData': taxData,
+                                                    'loanCostData': loanCostData,
+                                                    'etcOfSheet': etcOfSheet,
+                                                    'companies': company})
 
 
 # ###################################################################################################
@@ -997,19 +1018,32 @@ def AddCrntAsst(request, id, crntasstId=0):
                 form = CrrntAsstForm()
             else:
                 currentAsset1 = CurrentAsset.objects.get(pk=crntasstId)
-                form = CrrntAsstForm(instance= currentAsset1)
-            return render(request, 'budgeting/crrntasst.html', {'form': form, 'companies': company,'crrntAsstType': crrntAsstType,
-                                                               'crntAsst': crntAsst, 'userAuth':b})
+                form = CrrntAsstForm(instance=currentAsset1)
+            return render(request, 'budgeting/crrntasst.html',
+                          {'form': form, 'companies': company, 'crrntAsstType': crrntAsstType,
+                           'crntAsst': crntAsst, 'userAuth': b})
         else:
-            if crntasstId == 0 :
+            if crntasstId == 0:
                 form = CrrntAsstForm(request.POST)
             else:
                 currentAsset1 = CurrentAsset.objects.get(pk=crntasstId)
-                form = CrrntAsstForm(request.POST, instance= currentAsset1)
+                form = CrrntAsstForm(request.POST, instance=currentAsset1)
             if form.is_valid():
                 form.save()
             return render(request, 'budgeting/crrntasst.html', {'form': form, 'companies': company
-                                                          ,'crntAsst': crntAsst, 'userAuth':b})
+                , 'crntAsst': crntAsst, 'userAuth': b})
+    else:
+        return HttpResponseRedirect(reverse('accounts:companyList'))
+
+
+@login_required
+def delete_crrntasst(request, id):
+    deleted_object = CurrentAsset.objects.get(pk=id)
+    companyid = deleted_object.company.id
+    if user_auth(request, companyid) == True:
+        if request.method == 'POST':
+            deleted_object.delete()
+        return redirect('budgeting:crrntasst', companyid)
     else:
         return HttpResponseRedirect(reverse('accounts:companyList'))
 
@@ -1030,19 +1064,32 @@ def AddNCrntAsst(request, id, nCrntasstId=0):
                 form = NCrrntAsstForm()
             else:
                 nCurrentAsset1 = NonCurrentAsset.objects.get(pk=nCrntasstId)
-                form = NCrrntAsstForm(instance= nCurrentAsset1)
-            return render(request, 'budgeting/ncrrntasst.html', {'form': form, 'companies': company, 'nCrrntAsstType': nCrrntAsstType,
-                                                               'nCrntAsst': nCrntAsst, 'userAuth':b})
+                form = NCrrntAsstForm(instance=nCurrentAsset1)
+            return render(request, 'budgeting/ncrrntasst.html',
+                          {'form': form, 'companies': company, 'nCrrntAsstType': nCrrntAsstType,
+                           'nCrntAsst': nCrntAsst, 'userAuth': b})
         else:
-            if nCrntasstId == 0 :
+            if nCrntasstId == 0:
                 form = NCrrntAsstForm(request.POST)
             else:
                 nCurrentAsset1 = NonCurrentAsset.objects.get(pk=nCrntasstId)
-                form = NCrrntAsstForm(request.POST, instance= nCurrentAsset1)
+                form = NCrrntAsstForm(request.POST, instance=nCurrentAsset1)
             if form.is_valid():
                 form.save()
             return render(request, 'budgeting/ncrrntasst.html', {'form': form, 'companies': company
-                                                          ,'nCrntAsst': nCrntAsst, 'userAuth':b})
+                , 'nCrntAsst': nCrntAsst, 'userAuth': b})
+    else:
+        return HttpResponseRedirect(reverse('accounts:companyList'))
+
+
+@login_required
+def delete_ncrrntasst(request, id):
+    deleted_object = NonCurrentAsset.objects.get(pk=id)
+    companyid = deleted_object.company.id
+    if user_auth(request, companyid) == True:
+        if request.method == 'POST':
+            deleted_object.delete()
+        return redirect('budgeting:ncrrntasst', companyid)
     else:
         return HttpResponseRedirect(reverse('accounts:companyList'))
 
@@ -1063,19 +1110,33 @@ def AddNCrntLblt(request, id, nCrntLbltId=0):
                 form = NCrrntLbltForm()
             else:
                 nCurrentLblt1 = NonCurrentLiabilities.objects.get(pk=nCrntLbltId)
-                form = NCrrntLbltForm(instance= nCurrentLblt1)
-            return render(request, 'budgeting/ncrrntlblt.html', {'form': form, 'companies': company, 'nCrrntLbltType': nCrrntLbltType,
-                                                               'nCrntLblt': nCrntLblt, 'userAuth':b})
+                form = NCrrntLbltForm(instance=nCurrentLblt1)
+            return render(request, 'budgeting/ncrrntlblt.html',
+                          {'form': form, 'companies': company, 'nCrrntLbltType': nCrrntLbltType,
+                           'nCrntLblt': nCrntLblt, 'userAuth': b})
         else:
-            if nCrntLbltId == 0 :
+            if nCrntLbltId == 0:
                 form = NCrrntLbltForm(request.POST)
             else:
                 nCurrentLblt1 = NonCurrentLiabilities.objects.get(pk=nCrntLbltId)
-                form = NCrrntLbltForm(request.POST, instance= nCurrentLblt1)
+                form = NCrrntLbltForm(request.POST, instance=nCurrentLblt1)
             if form.is_valid():
                 form.save()
-            return render(request, 'budgeting/ncrrntlblt.html', {'form': form, 'companies': company, 'nCrrntLbltType': nCrrntLbltType
-                                                          ,'nCrntLblt': nCrntLblt, 'userAuth':b})
+            return render(request, 'budgeting/ncrrntlblt.html',
+                          {'form': form, 'companies': company, 'nCrrntLbltType': nCrrntLbltType
+                              , 'nCrntLblt': nCrntLblt, 'userAuth': b})
+    else:
+        return HttpResponseRedirect(reverse('accounts:companyList'))
+
+
+@login_required
+def delete_ncrrntlblt(request, id):
+    deleted_object = NonCurrentLiabilities.objects.get(pk=id)
+    companyid = deleted_object.company.id
+    if user_auth(request, companyid) == True:
+        if request.method == 'POST':
+            deleted_object.delete()
+        return redirect('budgeting:ncrrntlblt', companyid)
     else:
         return HttpResponseRedirect(reverse('accounts:companyList'))
 
@@ -1096,22 +1157,35 @@ def AddCrntLblt(request, id, crntLbltId=0):
                 form = CrrntLbltForm()
             else:
                 currentLblt1 = CurrentLiabilities.objects.get(pk=crntLbltId)
-                form = CrrntLbltForm(instance= currentLblt1)
-            return render(request, 'budgeting/crrntlblt.html', {'form': form, 'companies': company, 'crrntLbltType': crrntLbltType,
-                                                               'CrntLblt': CrntLblt, 'userAuth':b})
+                form = CrrntLbltForm(instance=currentLblt1)
+            return render(request, 'budgeting/crrntlblt.html',
+                          {'form': form, 'companies': company, 'crrntLbltType': crrntLbltType,
+                           'CrntLblt': CrntLblt, 'userAuth': b})
         else:
-            if crntLbltId == 0 :
+            if crntLbltId == 0:
                 form = CrrntLbltForm(request.POST)
             else:
                 currentLblt1 = CurrentLiabilities.objects.get(pk=crntLbltId)
-                form = CrrntLbltForm(request.POST, instance= currentLblt1)
+                form = CrrntLbltForm(request.POST, instance=currentLblt1)
             if form.is_valid():
                 form.save()
-            return render(request, 'budgeting/crrntlblt.html', {'form': form, 'companies': company, 'crrntLbltType': crrntLbltType
-                                                          ,'CrntLblt': CrntLblt, 'userAuth':b})
+            return render(request, 'budgeting/crrntlblt.html',
+                          {'form': form, 'companies': company, 'crrntLbltType': crrntLbltType
+                              , 'CrntLblt': CrntLblt, 'userAuth': b})
     else:
         return HttpResponseRedirect(reverse('accounts:companyList'))
 
+
+@login_required
+def delete_crrntlblt(request, id):
+    deleted_object = CurrentLiabilities.objects.get(pk=id)
+    companyid = deleted_object.company.id
+    if user_auth(request, companyid) == True:
+        if request.method == 'POST':
+            deleted_object.delete()
+        return redirect('budgeting:crrntlblt', companyid)
+    else:
+        return HttpResponseRedirect(reverse('accounts:companyList'))
 
 
 @login_required
@@ -1130,19 +1204,33 @@ def AddPrprtyRights(request, id, prprtyRightsId=0):
                 form = PrprtyRightsForm()
             else:
                 obj = PropertyRights.objects.get(pk=prprtyRightsId)
-                form = PrprtyRightsForm(instance= obj)
-            return render(request, 'budgeting/prprtyrights.html', {'form': form, 'companies': company,'prprtyRightsType': prprtyRightsType,
-                                                               'PrprtyRights': PrprtyRights, 'userAuth':b})
+                form = PrprtyRightsForm(instance=obj)
+            return render(request, 'budgeting/prprtyrights.html',
+                          {'form': form, 'companies': company, 'prprtyRightsType': prprtyRightsType,
+                           'PrprtyRights': PrprtyRights, 'userAuth': b})
         else:
-            if prprtyRightsId == 0 :
+            if prprtyRightsId == 0:
                 form = PrprtyRightsForm(request.POST)
             else:
                 obj = PropertyRights.objects.get(pk=prprtyRightsId)
-                form = PrprtyRightsForm(request.POST, instance= obj)
+                form = PrprtyRightsForm(request.POST, instance=obj)
             if form.is_valid():
                 form.save()
-            return render(request, 'budgeting/prprtyrights.html', {'form': form, 'companies': company, 'prprtyRightsType': prprtyRightsType
-                                                          ,'PrprtyRights': PrprtyRights, 'userAuth':b})
+            return render(request, 'budgeting/prprtyrights.html',
+                          {'form': form, 'companies': company, 'prprtyRightsType': prprtyRightsType
+                              , 'PrprtyRights': PrprtyRights, 'userAuth': b})
+    else:
+        return HttpResponseRedirect(reverse('accounts:companyList'))
+
+
+@login_required
+def delete_prprtyrights(request, id):
+    deleted_object = PropertyRights.objects.get(pk=id)
+    companyid = deleted_object.company.id
+    if user_auth(request, companyid) == True:
+        if request.method == 'POST':
+            deleted_object.delete()
+        return redirect('budgeting:prprtyRights', companyid)
     else:
         return HttpResponseRedirect(reverse('accounts:companyList'))
 
@@ -1153,8 +1241,9 @@ def CompnyDash(request, id):
 
     return render(request, 'budgeting/companydashh.html', {'cmpny': cmpny})
 
+
 @login_required
-def BalanceSheetSum(request,data):
+def BalanceSheetSum(request, data):
     realQ1 = 0
     realQ2 = 0
     realQ3 = 0
@@ -1174,7 +1263,7 @@ def BalanceSheetSum(request,data):
         forcastQ4 = forcastQ4 + i.forcastQ4
 
     context = {'realQ1': realQ1, 'realQ2': realQ2, 'realQ3': realQ3, 'realQ4': realQ4,
-           'forcastQ1':  forcastQ1, 'forcastQ2':  forcastQ2, 'forcastQ3':  forcastQ3, 'forcastQ4':  forcastQ4}
+               'forcastQ1': forcastQ1, 'forcastQ2': forcastQ2, 'forcastQ3': forcastQ3, 'forcastQ4': forcastQ4}
     return context
 
 
@@ -1206,16 +1295,44 @@ def BalanceSheetCal(request, id):
             nCrrntLbltData = {'nCrntLblt': nCrntLblt, 'sumNCrrntLblt': sumNCrrntLblt}
             prprtyRightsData = {'prprtyRights': prprtyRights, 'sumPrprtyRight': sumPrprtyRight}
 
+            asstsumdata = {'realQ1': sumCrrntAsset['realQ1'] + sumNCrrntAsset['realQ1'],
+                           'realQ2': sumCrrntAsset['realQ2'] + sumNCrrntAsset['realQ2'],
+                           'realQ3': sumCrrntAsset['realQ3'] + sumNCrrntAsset['realQ3'],
+                           'realQ4': sumCrrntAsset['realQ4'] + sumNCrrntAsset['realQ4'],
+                           'forcastQ1': sumCrrntAsset['forcastQ1'] + sumNCrrntAsset['forcastQ1'],
+                           'forcastQ2': sumCrrntAsset['forcastQ2'] + sumNCrrntAsset['forcastQ2'],
+                           'forcastQ3': sumCrrntAsset['forcastQ3'] + sumNCrrntAsset['forcastQ3'],
+                           'forcastQ4': sumCrrntAsset['forcastQ4'] + sumNCrrntAsset['forcastQ4'],}
+
+            lbltsumdata = {'realQ1': sumCrrntLblt['realQ1'] + sumNCrrntLblt['realQ1'],
+                           'realQ2': sumCrrntLblt['realQ2'] + sumNCrrntLblt['realQ2'],
+                           'realQ3': sumCrrntLblt['realQ3'] + sumNCrrntLblt['realQ3'],
+                           'realQ4': sumCrrntLblt['realQ4'] + sumNCrrntLblt['realQ4'],
+                           'forcastQ1': sumCrrntLblt['forcastQ1'] + sumNCrrntLblt['forcastQ1'],
+                           'forcastQ2': sumCrrntLblt['forcastQ2'] + sumNCrrntLblt['forcastQ2'],
+                           'forcastQ3': sumCrrntLblt['forcastQ3'] + sumNCrrntLblt['forcastQ3'],
+                           'forcastQ4': sumCrrntLblt['forcastQ4'] + sumNCrrntLblt['forcastQ4'], }
+
+            lbltprprtysumdata = {'realQ1': lbltsumdata['realQ1'] + sumPrprtyRight['realQ1'],
+                           'realQ2': lbltsumdata['realQ2'] + sumPrprtyRight['realQ2'],
+                           'realQ3': lbltsumdata['realQ3'] + sumPrprtyRight['realQ3'],
+                           'realQ4': lbltsumdata['realQ4'] + sumPrprtyRight['realQ4'],
+                           'forcastQ1': lbltsumdata['forcastQ1'] + sumPrprtyRight['forcastQ1'],
+                           'forcastQ2': lbltsumdata['forcastQ2'] + sumPrprtyRight['forcastQ2'],
+                           'forcastQ3': lbltsumdata['forcastQ3'] + sumPrprtyRight['forcastQ3'],
+                           'forcastQ4': lbltsumdata['forcastQ4'] + sumPrprtyRight['forcastQ4'], }
 
             # prePaids = crntAsst.objects.filter(accountCode = 1003)
             # crrntAsstData = sorted(crntAsst, key= 'accountCode')
 
             return render(request, 'budgeting/balancesheet.html', {'companies': company,
                                                                    'crrntAssetData': crrntAssetData,
-                                                                   'nCrrntAssetData': nCrrntAssetData ,
+                                                                   'nCrrntAssetData': nCrrntAssetData,
                                                                    'crrntLbltData': crrntLbltData,
                                                                    'nCrrntLbltData': nCrrntLbltData,
-                                                                   'prprtyRightsData': prprtyRightsData})
+                                                                   'prprtyRightsData': prprtyRightsData,
+                                                                   'asstsumdata': asstsumdata,
+                                                                   'lbltsumdata': lbltsumdata,
+                                                                   'lbltprprtysumdata': lbltprprtysumdata})
     else:
         return HttpResponseRedirect(reverse('accounts:companyList'))
-

@@ -3,9 +3,12 @@ from django import forms
 from budgeting.models import Income, CostOfSales, PublicCost, EtcOprationalIncome, EtcOprationalCost, NonOprationalCost, \
     NonOprationalIncome, Tax, LoanCost, CurrentAsset, NonCurrentAsset, CurrentLiabilitiesType, \
     NonCurrentLiabilitiesType, PropertyRights, CurrentLiabilities, NonCurrentLiabilities
+from lib.validators import positive_check
 
 
 class IncomeAddForm(forms.ModelForm):
+    realIncomeQ1 = forms.IntegerField(validators=[positive_check])
+    realIncomeQ2 = forms.IntegerField(validators=[positive_check])
     class Meta:
         model = Income
         fields = '__all__'

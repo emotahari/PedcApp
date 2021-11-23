@@ -26,7 +26,7 @@ class Income(models.Model):
         verbose_name_plural = 'درآمد'
 
     projectName = models.CharField('نام محصول/خدمت درامدی', max_length=100, null=True)
-    realIncomeQ1 = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    realIncomeQ1 = models.PositiveIntegerField("مقدار واقعی سه ماهه اول", default=0)
     realIncomeQ2 = models.IntegerField("مقدار واقعی سه ماهه دوم", default=0)
     realIncomeQ3 = models.IntegerField("مقدار واقعی سه ماهه سوم", default=0)
     realIncomeQ4 = models.IntegerField("مقدار واقعی سه ماهه چهارم", default=0)

@@ -90,5 +90,5 @@ class PrprtyRightsForm(forms.ModelForm):
 class UploadCsvForm(forms.ModelForm):
     class Meta:
         model = Csv
-        fields = 'file_name'
+        fields = '__all__'
 

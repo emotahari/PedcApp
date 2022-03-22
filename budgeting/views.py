@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 
 # Create your views here.
@@ -1336,3 +1336,7 @@ def BalanceSheetCal(request, id):
                                                                    'lbltprprtysumdata': lbltprprtysumdata})
     else:
         return HttpResponseRedirect(reverse('accounts:companyList'))
+
+
+def upload_file_view(request):
+    return HttpResponse('drop file')

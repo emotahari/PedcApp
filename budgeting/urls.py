@@ -36,6 +36,7 @@ urlpatterns = [
     path('delprprtyrght/<int:id>', views.delete_prprtyrights, name='prprtyRightsdel'),
     path('cmpnydashh/<int:id>', views.CompnyDash, name='cmpnydash'),
     path('balancsheet/<int:id>', views.BalanceSheetCal, name='balancesheet'),
+    path('uploadfile', views.upload_file_view, name='upload-view'),
 
 
 

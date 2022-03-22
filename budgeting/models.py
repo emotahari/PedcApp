@@ -422,3 +422,54 @@ class PropertyRights(models.Model):
         return str(self.id)
 
 
+class FinanceMegaData(models.Model):
+    company = models.ForeignKey('accounts.Company', on_delete=models.PROTECT, default=1)
+    AssetsAffectedbyInflationBookValue = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    AssetsAffectedbyInflationFairValue = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    Capital = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    CapitalBelongstoPEDC = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    CapitalChange = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    COGs = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    Dividends = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    DPS = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    Earning = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    EPS = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    EquityBookValue = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    EquityFairValue = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    EquityBooKValue = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    FaceValue = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    GovernanceDivision = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    GrossProfit = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    Interest = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    NAV = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    NetProfit = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    NeutralAssetsBookValue = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    NonoperatingIncomesCosts = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    NumberofSharesBelongtoPEDC = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    OperatingProfit = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    OtherOperatintgIncomesCosts = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    OwnershipofPEDC = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    Portfolio = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    SGA = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    Tax = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    TotalAssetBookValue = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    TotalAssetFairValue = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    TotalLiabilitiesBookValue = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    TotalNumberofOutstandingShares = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    TotalSaleTotalAssetFV = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    TotalSales = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    TSRBookValue = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    TSRFairValue = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+    year = models.IntegerField("مقدار واقعی سه ماهه اول", default=0)
+
+    def __str__(self):
+        return str(self.year)
+
+    def save(self, force_insert=False, force_update=False, using=None,
+             update_fields=None):
+        super().save(self)
+
+
+class Csv(models.Model):
+    file_name = models.FileField(upload_to='budgeting')
+    uploaded = models.DateTimeField(auto_now_add=True)

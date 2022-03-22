@@ -2,7 +2,7 @@ from django import forms
 
 from budgeting.models import Income, CostOfSales, PublicCost, EtcOprationalIncome, EtcOprationalCost, NonOprationalCost, \
     NonOprationalIncome, Tax, LoanCost, CurrentAsset, NonCurrentAsset, CurrentLiabilitiesType, \
-    NonCurrentLiabilitiesType, PropertyRights, CurrentLiabilities, NonCurrentLiabilities
+    NonCurrentLiabilitiesType, PropertyRights, CurrentLiabilities, NonCurrentLiabilities, Csv
 from lib.validators import positive_check
 
 
@@ -87,4 +87,8 @@ class PrprtyRightsForm(forms.ModelForm):
         model = PropertyRights
         fields = '__all__'
 
+class UploadCsvForm(forms.ModelForm):
+    class Meta:
+        model = Csv
+        fields = 'file_name'
 
